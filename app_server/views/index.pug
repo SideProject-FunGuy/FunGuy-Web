@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.text-center
+
+      - var h1Classes = ['h3', 'mb-3', ,'font-weight-normal'];
+      h1(class=h1Classes) Welcome to funguy
+
+      a.btn.btn-primary.float-left(href="/login") Sign in
+      |
+      a.btn.btn-primary.float-right(href="/register") Register
+
+      - var pClasses=['mt-5', 'mb-3', 'text-muted'];
+      p(class=pClasses) © 2020-2021
