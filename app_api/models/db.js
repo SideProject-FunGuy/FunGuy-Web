@@ -59,4 +59,5 @@ process.on('SIGTERM', () => {
 
 connect();
 
-require('./users');
+require('./user');
+require('./food');
