@@ -1,39 +1,62 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
-const MongoClient = require('mongodb').MongoClient;
+let dbURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.wktan.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
-let uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.wktan.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const dbName = 'funguy';
-
-async function run(){
-  try {
-    await client.connect();
-    console.log('Connected correctly to server');
-    const db = client.db(dbName);
-
-    // const col = db.collection('users');
-    //
-    // let personDocument = {
-    //   "email": "test4@hotmail.com"
-    // }
-    //
-    // const p = await col.insertOne(personDocument);
-    //
-    // const myDoc = await col.findOne();
-    //
-    // console.log(myDoc);
-
-  } catch (err) {
-    console.log(err.stack);
-  }
-  finally {
-    await client.close();
-  }
+const connect = () => {
+  setTimeout(() => mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}), 1000);
 }
 
-run().catch(console.dir);
+mongoose.connection.on('connected', () => {
+  console.log('connected');
+});
 
+mongoose.connection.on('error', err => {
+  console.log(`error: ' + ${err}`);
+  return connect();
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('disconnected');
+});
+
+if(process.platform ==='win32'){
+    const rl = readLine.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    rl.on('SIGINT', ()=>{
+        process.emit("SIGINT");
+    });
+}
+
+const gracefulShutdown = (msg, callback) => {
+  mongoose.connection.close( () => {
+    console.log(`Mongoose disconnected through ${msg}`);
+    callback();
+  });
+};
+
+// For nodemon restarts
+process.once('SIGUSR2', () => {
+  gracefulShutdown('nodemon restart', () => {
+    process.kill(process.pid, 'SIGUSR2');
+  });
+});
+
+// For app termination
+process.on('SIGINT', () => {
+  gracefulShutdown('app termination', () => {
+    process.exit(0);
+  });
+});
+
+// For Heroku app termination
+process.on('SIGTERM', () => {
+  gracefulShutdown('Heroku app shutdown', () => {
+    process.exit(0);
+  });
+});
+
+connect();
 
 require('./users');

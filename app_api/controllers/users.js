@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
-const getUsers = async (req, res)=>{
-  User.find()
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
+const getUsers = (req, res, callback)=>{
+  User.find({}, (err, user)=>{
+    if(err) {
+      res.status(500).send(err);
+    }
+    res.status(200).json(user);
+  });
+
 };
 
 module.exports = {
