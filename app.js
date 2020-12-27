@@ -28,13 +28,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
-// const asyncApiCall = async () => {
-//     const response = await shelflifeAPI.getCompatibility('Parsley');
-//
-//     console.log(response)
-// }
-//
-// asyncApiCall()
+const asyncApiCall = async () => {
+    const response = await shelflifeAPI.getCompatibility('17140');
+    let methods = response.data.methods;
+    console.log(methods[0].expirationTime);
+}
+
+asyncApiCall()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
