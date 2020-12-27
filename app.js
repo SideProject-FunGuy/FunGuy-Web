@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const shelflifeAPI = require('./shelf_life/shelf-life');
 
 require('./app_api/models/db');
 
@@ -26,6 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
+
+// const asyncApiCall = async () => {
+//     const response = await shelflifeAPI.getCompatibility('Parsley');
+//
+//     console.log(response)
+// }
+//
+// asyncApiCall()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
