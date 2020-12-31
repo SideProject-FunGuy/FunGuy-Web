@@ -3,6 +3,7 @@ const router = express.Router();
 const ctrlRegister = require('../controllers/register');
 const ctrlLogin = require('../controllers/login');
 const ctrlUsers = require('../controllers/users');
+const ctrlFoods = require('../controllers/foods');
 
 router
   .route('/register')
@@ -15,5 +16,9 @@ router
 router
   .route('/users')
   .get(ctrlUsers.getUsers);
+
+router
+  .route('/foods')
+  .get(ctrlFoods.foodsList);
 
 module.exports = router;

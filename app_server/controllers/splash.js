@@ -3,11 +3,10 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 
-/* GET 'login' page */
-const login = (req, res)=>{
-  res.render('login', {title: 'Login'});
+/* GET home page. */
+const splash = (req, res)=>{
+  res.render('splash', { title: 'Welcome to funguy'});
 };
-
 module.exports = {
-  login
+  splash
 };

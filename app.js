@@ -29,9 +29,20 @@ app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
 const asyncApiCall = async () => {
-    const response = await shelflifeAPI.getCompatibility('17140');
-    let methods = response.data.methods;
-    console.log(methods[0].expirationTime);
+    const response = await shelflifeAPI.getCompatibility('Parsley');
+    console.log(response);
+    let select = response.data[0].name;
+    console.log(select);
+    // let methods = response.data.methods;
+    // console.log(response);
+    // console.log(methods);
+    // let expirationTime = methods[0].expirationTime * 1000;
+    // let start = Date.now();
+    // console.log("Today's date: " + start);
+    // console.log("Expiration: " + expirationTime);
+    // let shelf_life = start + expirationTime;
+    // let newExpiryDate = new Date(shelf_life);
+    // console.log('expiry date: ' + newExpiryDate.toLocaleString());
 }
 
 asyncApiCall()
