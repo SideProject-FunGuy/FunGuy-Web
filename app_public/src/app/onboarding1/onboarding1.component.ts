@@ -22,7 +22,8 @@ export class Onboarding1Component implements OnInit {
     navSpeed: 700,
     navText: ['', ''],
     items: 1,
-    nav: false
+    nav: false,
+
   }
 
 }

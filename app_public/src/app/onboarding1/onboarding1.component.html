@@ -1,15 +1,37 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide>
 
+    <div class="slide-container">
+      <div class="header">
+        <img src="../../assets/images/logo.png" alt="">
+        <a href="">skip</a>
+      </div>
+      <h1 style="width: 70vw">Time to take total control over your fridge.</h1>
+      <img src="../../assets/images/onboarding1.png" alt="" style="width: 80vw; max-width: 400px;">
+    </div>
 
-<div>Some tags before</div>
-  <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>
-        <img src="../../assets/images/onboarding1.png" alt="">
-    </ng-template>  
-    <ng-template carouselSlide>
-        <img src="../../assets/images/onboarding2.png" alt="">
-    </ng-template>  
-    <ng-template carouselSlide>
-        <img src="../../assets/images/onboarding3.png" alt="">
-    </ng-template>  
-  </owl-carousel-o>
-  <div>Some tags after</div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header">
+        <img src="../../assets/images/logo.png" alt="">
+        <a href="">skip</a>
+      </div>
+      <h1 style="width: 60vw">Track your food waste.</h1>
+      <img src="../../assets/images/onboarding2.png" alt="" style="width: 80vw; max-width: 400px;">
+    </div>
+
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header" style="margin-top: 0;">
+        <img src="../../assets/images/logo.png" alt="">
+
+      </div>
+      <h1 style="width: 85vw">Know when your ingredients expire.</h1>
+      <img src="../../assets/images/onboarding3.png" alt="" style="width: 80vw; max-width: 400px;">
+      <div class="btn"><a href="">get started</a></div>
+    </div>
+
+  </ng-template>
+</owl-carousel-o>
