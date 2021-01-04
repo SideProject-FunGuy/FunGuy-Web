@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { Onboarding1Component } from './onboarding1/onboarding1.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PantryComponent } from './pantry/pantry.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     LoginComponent,
     Onboarding1Component,
+    PantryComponent,
   ],
   imports: [
     BrowserModule,
