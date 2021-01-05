@@ -4,11 +4,14 @@
 }
 header{
     position: sticky;
+    top:0;
     display: flex;
     padding: 20px;
-    padding-bottom: 0;
+    padding-bottom: 5px;
     justify-content: center;
-    position: relative;
+    background-color: #fcfffc;
+    z-index: 5;
+    
 
 }
 
