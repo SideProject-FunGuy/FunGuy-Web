@@ -18,7 +18,7 @@ router
   .get(ctrlUsers.getUsers);
 
 router
-  .route('/foods')
+  .route('/foods/:food')
   .get(ctrlFoods.foodsList);
 
 module.exports = router;

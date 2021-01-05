@@ -1,35 +1,30 @@
 const mongoose = require('mongoose');
+const querystring = require('querystring');
 const Food = mongoose.model('Food');
 
 const axios = require('axios');
 const BASE_URL = `https://shelf-life-api.herokuapp.com`;
 
-const getCompatibility = (query) => axios({
-  method:"GET",
-  url : BASE_URL + `/search/`,
-  headers: {
-      "content-type":"application/x-www-form-urlencoded"
-  },
-  params: {
-      q: query
-  }
-});
 
-const foodsList = (req, res, callback)=>{
-  const asyncApiCall = async () => {
-      const response = await this.getCompatibility('Parsley');
-      console.log(response);
-  }
+const foodsList = async (req, res)=>{
   try {
-    asyncApiCall();
-    res
-     .status(200)
-     .json(response);
+    let res = await axios({
+      method:"GET",
+      url : BASE_URL + `/search`,
+      headers: {
+          "content-type":"application/x-www-form-urlencoded"
+      },
+      params: {
+          q: params
+      }
+    })
+    .then((response)=>{
+      console.log(response);
+    });
   } catch (err) {
-    res
-     .status(404)
-     .json(err);
+    console.error(err);
   }
+
 };
 
 
