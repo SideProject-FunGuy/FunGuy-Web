@@ -1,13 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+require('dotenv').config();
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const shelflifeAPI = require('./shelf_life/shelf-life');
 
-var indexRouter = require('./app_server/routes/index');
-var usersRouter = require('./app_server/routes/users');
+require('./app_api/models/db');
 
-var app = express();
+const indexRouter = require('./app_server/routes/index');
+const apiRouter = require('./app_api/routes/index');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -17,10 +22,30 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', apiRouter);
+
+const asyncApiCall = async () => {
+    const response = await shelflifeAPI.getCompatibility('Parsley');
+    console.log(response);
+    let select = response.data[0].name;
+    console.log(select);
+    // let methods = response.data.methods;
+    // console.log(response);
+    // console.log(methods);
+    // let expirationTime = methods[0].expirationTime * 1000;
+    // let start = Date.now();
+    // console.log("Today's date: " + start);
+    // console.log("Expiration: " + expirationTime);
+    // let shelf_life = start + expirationTime;
+    // let newExpiryDate = new Date(shelf_life);
+    // console.log('expiry date: ' + newExpiryDate.toLocaleString());
+}
+
+asyncApiCall()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

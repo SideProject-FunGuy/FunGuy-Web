@@ -102,8 +102,8 @@ main{
 }
 
 .food-items .item-card .left-content img{
-    height: 70%;
-    width: auto;
+    width: 10%;
+    height: auto;
 }
 
 .food-items .item-card .left-content .food-info{
@@ -130,6 +130,7 @@ main{
     position: relative;
     height: 100%;
     width: 18%;
+    min-width: 55px;
     max-width: 60px;
     display: flex;
     justify-content: space-between;
