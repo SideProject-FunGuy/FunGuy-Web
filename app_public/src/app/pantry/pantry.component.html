@@ -21,22 +21,20 @@
         </div>
 
         <div class="food-items">
-            <div class="item-card">
+            <div class="item-card" *ngFor="let food of foods">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/fruits.png" alt="">
                     <div class="food-info">
-                        <h2>Bananas</h2>
-                        <p>3 days left</p>
+                        <h2>{{food.food_name}}</h2>
+                        <p>5 days left</p>
                     </div>
                 </div>
                 <div class="right-content">
                     <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
             <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/fish.png" alt="">
@@ -49,10 +47,8 @@
                     <img src="../../assets/images/pantry/expired.png" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
             <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/grains.png" alt="">
@@ -65,10 +61,8 @@
                     <img src="" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
             <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/dairy.png" alt="">
@@ -81,9 +75,6 @@
                     <img src="../../assets/images/pantry/expired.png" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
 
 
@@ -99,9 +90,6 @@
                     <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
 
             <div class="item-card">
@@ -116,10 +104,8 @@
                     <img src="" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
             <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/fruits.png" alt="">
@@ -132,10 +118,8 @@
                     <img src="" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
             <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/grains.png" alt="">
@@ -148,10 +132,8 @@
                     <img src="" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
             <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/dairy.png" alt="">
@@ -164,10 +146,8 @@
                     <img src="../../assets/images/pantry/expired.png" class="expiry-alert" alt="">
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
-
-
-
             </div>
+
         </div>
 
         <button><img src="../../assets/images/pantry/add.png" alt=""></button>
