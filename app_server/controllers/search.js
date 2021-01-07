@@ -5,7 +5,7 @@ const apiOptions = {
 };
 
 if (process.env.NODE_ENV === 'production'){
-  apiOptions.server = '';
+  apiOptions.server = 'https://mysterious-waters-29226.herokuapp.com';
 }
 
 axios.interceptors.request.use(req=>{
@@ -21,7 +21,7 @@ const renderSearch = (req, res, responseBody)=>{
 };
 
 /* GET 'Search' page */
-const search = async (req, res)=>{
+const search = (req, res)=>{
   const path = '/api/search';
   const requestOptions = {
     url: `${apiOptions.server}${path}`,
