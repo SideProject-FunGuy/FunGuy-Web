@@ -19,7 +19,7 @@ router
   .get(ctrlUsers.getUsers);
 
 router
-  .route('/foods/:food')
+  .route('/food')
   .get(ctrlFoods.foodsList);
 
 router
