@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
 let dbURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.wktan.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-
+if(process.env.NODE_ENV === 'production'){
+  dbURI = process.env.MONGODB_URI;
+}
 const connect = () => {
   setTimeout(() => mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}), 1000);
 }
