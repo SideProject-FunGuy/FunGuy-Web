@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const shelflifeAPI = require('./shelf_life/shelf-life');
-
 require('./app_api/models/db');
 
 const indexRouter = require('./app_server/routes/index');

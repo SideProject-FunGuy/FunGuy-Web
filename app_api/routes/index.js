@@ -4,6 +4,7 @@ const ctrlRegister = require('../controllers/register');
 const ctrlLogin = require('../controllers/login');
 const ctrlUsers = require('../controllers/users');
 const ctrlFoods = require('../controllers/foods');
+const ctrlSearch = require('../controllers/search');
 
 router
   .route('/register')
@@ -20,5 +21,9 @@ router
 router
   .route('/foods/:food')
   .get(ctrlFoods.foodsList);
+
+router
+  .route('/search')
+  .get(ctrlSearch.defaultSearch);
 
 module.exports = router;
