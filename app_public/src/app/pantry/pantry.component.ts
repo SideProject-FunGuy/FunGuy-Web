@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ShelflifeDataService } from '../shelflife-data.service';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Food {
-  food_id: string;
-  food_name: string;
+  id: string;
+  name: string;
+  url: string;
   // food_location: string;
   // food_tips: string[];
   // expirationString: string;
   // expirationTime: number;
   // category: string;
   constructor(){
-    this.food_id='';
-    this.food_name='';
+    this.id='';
+    this.name='';
+    this.url='';
     // this.food_location='';
     // this.food_tips=[];
     // this.expirationString='';
@@ -27,15 +31,30 @@ export class Food {
 })
 export class PantryComponent implements OnInit {
 
+  constructor(private shelflifeDataService: ShelflifeDataService, private http: HttpClient) { }
+
   public foods: Food[]=[];
 
-  constructor(private shelflifeDataService: ShelflifeDataService) { }
+  ngOnInit(){
+    this.getFoods();
+  }
 
   private getFoods(): void{
     this.shelflifeDataService
       .getFoods()
-        .then(foundFoods => this.foods = foundFoods);
+        .then(foundFoods => this.foods=foundFoods);
   }
+
+  private handleError(error: any): Promise<any> {
+    console.error('Something went wrong', error);
+    return Promise.reject(error.message || error);
+  }
+  // private getFoods(): void{
+  //   this.shelflifeDataService
+  //     .getFoods()
+  //       .then(foundFoods => this.foods = foundFoods)
+  //       .then(console.log(this.foods));
+  // }
   //  = [{
   //   food_id: '17879',
   //   food_name: 'Parsley - Fresh, Raw',
@@ -55,8 +74,6 @@ export class PantryComponent implements OnInit {
   //   category: 'Beverages'
   // }];
 
-  ngOnInit(){
-    this.getFoods();
-  }
+
 
 }

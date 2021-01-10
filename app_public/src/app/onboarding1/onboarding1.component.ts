@@ -21,9 +21,41 @@ export class Onboarding1Component implements OnInit {
     dots: true,
     navSpeed: 700,
     navText: ['', ''],
-    items: 1,
-    nav: false,
-
+    margin:10,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    },
+    nav: false
   }
+
+  slidesStore = [
+    {
+      id:"One",
+      src:'../../assets/images/onboarding1.png',
+      logo: '../../assets/images/logo.png',
+      text:'Time to take total control over your fridge.'
+    },
+    {
+      id:"Two",
+      src:'../../assets/images/onboarding2.png',
+      logo: '../../assets/images/logo.png',
+      text:'Track your food waste.'
+    },
+    {
+      id:"Three",
+      src:'../../assets/images/onboarding3.png',
+      logo: '../../assets/images/logo.png',
+      text:'Know when your ingredients expire.'
+    }
+  ]
+
 
 }

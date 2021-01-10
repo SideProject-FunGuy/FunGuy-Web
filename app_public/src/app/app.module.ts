@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { APP_BASE_HREF } from '@angular/common';
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+
 import { AppComponent } from './app.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { RegisterComponent } from './register/register.component';
@@ -19,9 +22,9 @@ import { SearchComponent } from './search/search.component';
   declarations: [
     AppComponent,
     SplashPageComponent,
+    Onboarding1Component,
     RegisterComponent,
     LoginComponent,
-    Onboarding1Component,
     PantryComponent,
     StatisticsComponent,
     SearchComponent,

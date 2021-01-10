@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1(class=h1Classes) #{title}
+  input.search(
+    type='text'
+    name='search'
+    placeholder='Enter a search term..'
+  )
+  each food in foods
+    .card
+      .card-block
+        h4
+          a(href='/guides/'+ food.id)=food.name
+          p=food.id
+          p=food.url
+          - var buttonClass=['btn', 'btn-sm', 'btn-primary', 'btn-block'];
+          button(class=buttonClass href="/api/pantry/new") Add to my pantry
