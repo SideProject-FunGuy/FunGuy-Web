@@ -1,55 +1,61 @@
+const axios = require('axios');
 const mongoose = require('mongoose');
 const Food = mongoose.model('Food');
 
-const axios = require('axios');
 const BASE_URL = `https://shelf-life-api.herokuapp.com`;
 
-const getCompatibility = (query) => axios({
-  method:"GET",
-  url : BASE_URL + `/search/`,
-  headers: {
-      "content-type":"application/x-www-form-urlencoded"
-  },
-  params: {
-      q: query
-  }
-});
-
-const foodsList = (req, res, callback)=>{
-  const asyncApiCall = async () => {
-      const response = await this.getCompatibility('Parsley');
-      console.log(response);
-  }
+const foodsList = async (req, res)=>{
   try {
-    asyncApiCall();
+    const results = await axios({
+      method:"GET",
+      url : BASE_URL + `/search`,
+      headers: {
+          "content-type":"application/x-www-form-urlencoded"
+      },
+      params: {
+          q: `broccoli`
+      }
+    });
+    const foods = results.map(result=> {
+      return{
+        food_id: result.id,
+        food_name: result.name
+      }
+      console.log(foods);
+    });
     res
-     .status(200)
-     .json(response);
+      .status(200)
+      .json(foods);
   } catch (err) {
     res
-     .status(404)
-     .json(err);
+      .status(400)
+      .json(err);
   }
 };
 
 
-const foodSearch = (req, res, callback)=>{
-
+const defaultFoodsList = async (req, res)=>{
+  try {
+    let res = await axios({
+      method:"GET",
+      url : BASE_URL + `/search`,
+      headers: {
+          "content-type":"application/x-www-form-urlencoded"
+      }
+    })
+    .then((response)=>{
+      console.log(response);
+    });
+  } catch (err) {
+    console.error(err);
+  }
 };
+
 
 const foodsCreateOne = (req, res, callback)=>{
 
 };
 
-const foodsReadAll = (req, res, callback)=>{
-
-
-};
-
-const foodsReadByType = (req, res, callback)=>{
-
-
-};
 
 const foodReadOne = (req, res, callback)=>{
 
@@ -57,10 +63,8 @@ const foodReadOne = (req, res, callback)=>{
 
 
 module.exports = {
-  foodSearch,
   foodsCreateOne,
-  foodsReadAll,
-  foodsReadByType,
   foodReadOne,
-  foodsList
+  foodsList,
+  defaultFoodsList
 };

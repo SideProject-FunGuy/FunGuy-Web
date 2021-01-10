@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const shelflifeAPI = require('./shelf_life/shelf-life');
-
 require('./app_api/models/db');
 
 const indexRouter = require('./app_server/routes/index');
@@ -22,8 +21,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_public')));
+
+app.use('/api', (req, res, next)=>{
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
@@ -45,7 +50,7 @@ const asyncApiCall = async () => {
     // console.log('expiry date: ' + newExpiryDate.toLocaleString());
 }
 
-asyncApiCall()
+//asyncApiCall()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -9,9 +9,10 @@ const foodInfo = (req, res)=>{
   {
     title: 'Parsley - Fresh, Raw',
     tips: 'Store in fridge',
-    expiry: '2 days'  
+    expiry: '2 days'
   });
 };
+
 
 module.exports = {
   foodInfo

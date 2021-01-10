@@ -1,12 +1,62 @@
+const axios = require('axios');
 const request = require('request');
 const apiOptions = {
   server: 'http://localhost:3000'
 };
 
+if (process.env.NODE_ENV === 'production'){
+  apiOptions.server = 'https://mysterious-waters-29226.herokuapp.com';
+}
+
+axios.interceptors.request.use(req=>{
+  console.log(`${req.method} ${req.url}`);
+  return req;
+});
+
+/* GET 'Search results' */
+const renderSearch = (req, res, responseBody)=>{
+    res.render('search', {
+      results: responseBody
+    });
+};
+
 /* GET 'Search' page */
 const search = (req, res)=>{
-  res.render('search', {title: 'Search'});
+  const path = '/api/search';
+  const requestOptions = {
+    url: `${apiOptions.server}${path}`,
+    method: 'GET',
+    json: {}
+  };
+  request(
+    requestOptions,
+    (err, response, body)=>{
+      renderSearch(req, res, body);
+    }
+  );
 };
+
+
+const foodsList = async (req, res)=>{
+  try {
+    let res = await axios({
+      method:"GET",
+      url : BASE_URL + `/search`,
+      headers: {
+          "content-type":"application/x-www-form-urlencoded"
+      },
+      params: {
+          q: req.params.food
+      }
+    })
+    .then((response)=>{
+      console.log(response);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 
 /* GET 'Search results' page */
 const searchResult = (req, res)=>{
@@ -28,5 +78,6 @@ const searchResult = (req, res)=>{
 
 module.exports = {
   search,
+  renderSearch,
   searchResult
 };

@@ -1,4 +1,9 @@
 extends layout
 
 block content
-  h1(class=h1Classes) Search
+  h1(class=h1Classes) #{title}
+  input.search(
+    type='text'
+    name='search'
+    placeholder='Enter a search term..'
+  )

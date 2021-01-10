@@ -7,6 +7,7 @@ import { PantryComponent } from '../pantry/pantry.component';
 import { StatisticsComponent } from '../statistics/statistics.component';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { SearchComponent } from '../search/search.component'
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   }, {
     path: 'statistics',
     component: StatisticsComponent
+  }, {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 
