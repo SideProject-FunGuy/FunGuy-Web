@@ -18,25 +18,9 @@ router
 router
   .route('/guides/:item')
   .get(ctrlSearch.searchItem)
-//
-// router
-//   .route('/login')
-//   .post(ctrlLogin.userLogin);
-//
-// router
-//   .route('/users')
-//   .get(ctrlUsers.getUsers);
-//
-// router
-//   .route('/food')
-//   .get(ctrlFoods.foodsList);
-//
-// router
-//   .route('/search')
-//   .get(ctrlSearch.search);
-//
-// router
-//   .route('/pantry')
-//   .get(ctrlPantry.search)
+
+router
+  .route('/new/:item')
+  .post(ctrlPantry.addPantryItem);
 
 module.exports = router;

@@ -11,6 +11,8 @@ block content
     .card
       .card-block
         h4
-          a(href='')=food.name
+          a(href='/guides/'+ food.id)=food.name
           p=food.id
           p=food.url
+          - var buttonClass=['btn', 'btn-sm', 'btn-primary', 'btn-block'];
+          button(class=buttonClass href="/api/pantry/new") Add to my pantry

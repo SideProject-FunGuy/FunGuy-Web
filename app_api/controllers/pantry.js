@@ -3,6 +3,7 @@ const Food = mongoose.model('Food');
 const axios = require('axios');
 
 const BASE_URL = `https://shelf-life-api.herokuapp.com`;
+const db = mongoose.connection;
 
 const pantryList = async(req, res)=>{
   try{
@@ -47,7 +48,32 @@ const pantryItem = async(req, res)=>{
   }
 };
 
+const addPantryItem = async(req, res)=>{
+  // console.log('called add pantry item');
+  // let foodDocument = new Food({
+  //   id: "18360",
+  //   name: "Spaghetti Sauce / Pasta Sauce, Cream-Based, Commercially Canned or Bottled - Opened"
+  // });
+  // console.log(foodDocument);
+  // foodDocument.save(function(err, food){
+  //   if(err) return console.error(err);
+  //   console.log(food.name +'saved');
+  // });
+
+};
+
+const deletePantryItem = async(req, res)=>{
+
+};
+
+const updatePantryItem = async(req, res)=>{
+
+};
+
 module.exports={
   pantryList,
-  pantryItem
+  pantryItem,
+  addPantryItem,
+  deletePantryItem,
+  updatePantryItem
 }

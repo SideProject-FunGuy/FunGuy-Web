@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Food {
-  food_id: string;
-  food_name: string;
+  id: string;
+  name: string;
   url: string;
   // food_location: string;
   // food_tips: string[];
@@ -13,8 +13,8 @@ export class Food {
   // expirationTime: number;
   // category: string;
   constructor(){
-    this.food_id='';
-    this.food_name='';
+    this.id='';
+    this.name='';
     this.url='';
     // this.food_location='';
     // this.food_tips=[];
@@ -40,15 +40,9 @@ export class PantryComponent implements OnInit {
   }
 
   private getFoods(): void{
-
-    const apiBaseUrl = 'http://localhost:3000/api';
-    const url: string=`${this.apiBaseUrl}/pantry`;
-    return this.http
-      .get(url)
-      .toPromise()
-      .then(response=> response as Food[])
-      .catch(this.handleError);
-
+    this.shelflifeDataService
+      .getFoods()
+        .then(foundFoods => this.foods=foundFoods);
   }
 
   private handleError(error: any): Promise<any> {

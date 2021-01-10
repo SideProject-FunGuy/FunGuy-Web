@@ -13,7 +13,7 @@ const routes: Routes = [
     component: SplashPageComponent
   },
   {
-    path: 'onboarding1',
+    path:'onboarding1',
     component: Onboarding1Component
   },
   {

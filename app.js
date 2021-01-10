@@ -5,52 +5,44 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-const shelflifeAPI = require('./shelf_life/shelf-life');
+const passport = require('passport');
+const cors = require('cors');
 require('./app_api/models/db');
+//require('./app_api/config/passport');
 
 const indexRouter = require('./app_server/routes/index');
 const apiRouter = require('./app_api/routes/index');
 
+// express app
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
 
+// other middleware
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app_public')));
 
-// app.use('/api', (req, res, next)=>{
-//   res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// });
+// static routes
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_public', 'build')));
+
+// initialize passport and add to middleware
+// app.use(passport.initialize());
+
+// cors
+app.use('/api', (req, res, next)=>{
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
-
-const asyncApiCall = async () => {
-    const response = await shelflifeAPI.getCompatibility('Parsley');
-    console.log(response);
-    let select = response.data[0].name;
-    console.log(select);
-    // let methods = response.data.methods;
-    // console.log(response);
-    // console.log(methods);
-    // let expirationTime = methods[0].expirationTime * 1000;
-    // let start = Date.now();
-    // console.log("Today's date: " + start);
-    // console.log("Expiration: " + expirationTime);
-    // let shelf_life = start + expirationTime;
-    // let newExpiryDate = new Date(shelf_life);
-    // console.log('expiry date: ' + newExpiryDate.toLocaleString());
-}
-
-//asyncApiCall()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

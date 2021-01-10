@@ -5,7 +5,14 @@ const apiOptions = {
 
 /* GET splash page. */
 const splash = (req, res)=>{
-  res.render('splash');
+  res.render('splash', {
+    title:'Welcome to funguy',
+        pageHeader: {
+            title: 'Funguy',
+            strapline: 'Register to begin'
+        },
+        sidebar: 'Questions or Comments? Contact us at ask@funguy.com'
+  });
 };
 
 /* GET register page. */
