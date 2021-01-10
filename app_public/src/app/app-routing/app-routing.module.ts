@@ -7,7 +7,8 @@ import { PantryComponent } from '../pantry/pantry.component';
 import { StatisticsComponent } from '../statistics/statistics.component';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
-import { SearchComponent } from '../search/search.component'
+import { SearchComponent } from '../search/search.component';
+import { NewItemComponent } from '../new-item/new-item.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
   }, {
     path: 'search',
     component: SearchComponent
+  }, {
+    path: 'new-item',
+    component: NewItemComponent
   }
 ];
 
