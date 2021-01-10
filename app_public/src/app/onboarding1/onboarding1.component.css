@@ -14,8 +14,6 @@ main{
 .header{
     display: flex;
     justify-content: space-between;
-    /* width: calc(100vw - 48px);
-    margin: 0 24px; */
     margin-top: -20px;
     
 }
@@ -48,7 +46,6 @@ main{
     font-weight: 600;
     align-self: center;
     margin-top: 3vh;
-    /* margin-left: -50px; */
 
 }
 

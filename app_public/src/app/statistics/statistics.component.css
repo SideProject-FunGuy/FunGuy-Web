@@ -1,0 +1,145 @@
+main{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background: #FCFFFC;
+    min-height: 100vh;
+    width: 100vw;
+    padding-bottom: calc(max(9vh, 70px));
+    
+    
+}
+
+.stat{
+    padding: 16px;
+    width: 85vw;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-top: 24px;
+    text-align: center;
+}
+
+.stat.streak{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat.streak .line-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 32px;
+    width: 70%;
+    min-width: 200px;
+}
+h3{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    margin: 0;
+}
+.stat.streak img{
+    height: 100%;
+}
+
+p{
+    font-weight: 200;
+    font-size: 14px;
+    margin: 0;
+}
+
+.stat.percentages .graph{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.stat.percentages .graph .color{
+    display: flex;
+    margin: 4px 0;
+}
+
+.stat.percentages .graph .color p{
+    font-size: 12px;
+}
+
+
+.stat.percentages .graph img{
+    margin-right: 10px;
+    width: 80px;
+    height: auto;
+}
+
+.stat.percentages .graph .color img{
+    width: 16px;
+    height: 16px;
+}
+
+.stat.food-categories p{
+    font-size: 12px;
+    color: #aaa;
+    
+}
+
+.stat.food-categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.stat.food-categories .foods{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 10px 0;
+}
+
+.stat.food-categories .foods div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: center;
+}
+
+.stat.food-categories .foods div img{
+    height: 6.5vh;
+    margin-bottom: 10px;
+
+}
+
+
+
+.stat.progression{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat.progression img{
+    width: 100%;
+    margin-left: -3px;
+}
+
+.categories-container{
+    padding: 0;
+    margin: 16px 0;
+    align-self: center;
+}
+
+
+.stat.individual-categories{
+    /* padding: 0; */
+
+}
+
+.stat.individual-categories img{
+    width: 100%;
+
+}
