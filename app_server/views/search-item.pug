@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .row.banner
+    h1=title
+  .row
+    .col-12.col-lg-9
+      p=food.name
+      p=food.methods[0].expiration

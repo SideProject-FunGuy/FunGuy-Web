@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1(class=h1Classes) #{title}
+  input.search(
+    type='text'
+    name='search'
+    placeholder='Enter a search term..'
+  )
+  each food in foods
+    .card
+      .card-block
+        h4
+          a(href='')=food.name
+          p=food.id
+          p=food.url

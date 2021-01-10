@@ -1,27 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const ctrlSplash = require('../controllers/splash');
-const ctrlLogin = require('../controllers/login');
-const ctrlRegister = require('../controllers/register');
-const ctrlFoods = require('../controllers/foods');
-const ctrlSearch = require('../controllers/search');
 
-/* GET home page. */
-router.get('/', ctrlSplash.splash);
-
-/* GET login page. */
-router.get('/login', ctrlLogin.login);
-
-/* GET register page. */
-router.get('/register', ctrlRegister.register);
+const ctrlPantry= require('../controllers/pantry');
+const ctrlOther = require('../controllers/other');
 
 /* GET food info page. */
-router.get('/food', ctrlFoods.foodInfo);
+router.get('/', ctrlOther.splash);
+router.get('/register', ctrlOther.register);
+router.get('/login', ctrlOther.login);
 
-/* GET search page. */
-router.get('/search', ctrlSearch.search);
+router.get('/pantry', ctrlPantry.pantryList);
+router.get('/pantry/:item', ctrlPantry.pantryItemDetail);
 
-/* GET search results page. */
-router.get('/result', ctrlSearch.searchResult);
+router.get('/search', ctrlOther.search);
+router.get('/search/:search', ctrlOther.searchResult);
+router.get('/guides/:item', ctrlOther.searchItemDetail);
 
 module.exports = router;

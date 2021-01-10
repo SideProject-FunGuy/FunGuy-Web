@@ -9,7 +9,7 @@ export class ShelflifeDataService {
   private apiBaseUrl = 'http://localhost:3000/api';
 
   public getFoods():Promise<Food[]>{
-    const url: string=`${this.apiBaseUrl}/food`;
+    const url: string=`${this.apiBaseUrl}/pantry`;
     return this.http
       .get(url)
       .toPromise()

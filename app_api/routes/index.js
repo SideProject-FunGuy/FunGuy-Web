@@ -1,29 +1,42 @@
 const express = require('express');
 const router = express.Router();
-const ctrlRegister = require('../controllers/register');
-const ctrlLogin = require('../controllers/login');
-const ctrlUsers = require('../controllers/users');
-const ctrlFoods = require('../controllers/foods');
+const ctrlPantry = require('../controllers/pantry');
 const ctrlSearch = require('../controllers/search');
 
 router
-  .route('/register')
-  .post(ctrlRegister.userCreate);
+   .route('/pantry')
+   .get(ctrlPantry.pantryList);
 
 router
-  .route('/login')
-  .post(ctrlLogin.userLogin);
+  .route('/pantry/:item')
+  .get(ctrlPantry.pantryItem);
 
 router
-  .route('/users')
-  .get(ctrlUsers.getUsers);
+  .route('/search/:search')
+  .get(ctrlSearch.searchList);
 
 router
-  .route('/food')
-  .get(ctrlFoods.foodsList);
-
-router
-  .route('/search')
-  .get(ctrlSearch.defaultSearch);
+  .route('/guides/:item')
+  .get(ctrlSearch.searchItem)
+//
+// router
+//   .route('/login')
+//   .post(ctrlLogin.userLogin);
+//
+// router
+//   .route('/users')
+//   .get(ctrlUsers.getUsers);
+//
+// router
+//   .route('/food')
+//   .get(ctrlFoods.foodsList);
+//
+// router
+//   .route('/search')
+//   .get(ctrlSearch.search);
+//
+// router
+//   .route('/pantry')
+//   .get(ctrlPantry.search)
 
 module.exports = router;
