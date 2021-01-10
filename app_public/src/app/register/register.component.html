@@ -1,3 +1,35 @@
-<p>register!</p>
-<p> OR </p>
-<div class="btn"><a routerLink="/login">Login</a></div>
+<owl-carousel-o class="carousel-section" [options]="customOptions">
+
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header">
+        <img src="../../assets/images/logo.png" alt="">
+      </div>
+      <h1 style="width: 70vw">Sign up</h1>
+      <form style="width: 70vw">
+        <div class="form-group">
+          <input type="name" class="form-control" id="inputName" placeholder="Name">
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="password" class="form-control" id="confirmPassword" placeholder=" Confirm Password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="signup">SIGN UP</button>
+        <br>
+        <small id="loginHelp" class="form-text text-muted">Already have an account? <a [routerLink]="['/login']">Sign in.</a></small>
+
+      </form>
+    </div>
+
+
+
+  </ng-template>
+</owl-carousel-o>
