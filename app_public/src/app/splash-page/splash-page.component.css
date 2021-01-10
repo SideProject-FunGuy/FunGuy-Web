@@ -1,8 +1,35 @@
-.headline {
-  color: #8CC79B;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 47px;
-  letter-spacing: 0em;
+.splash{
+    background: #fcfffc;
+    min-height: 100vh;
+}
+
+main {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+main img{
+    width: 39.17px;
+    height: 36.73px;
+    left: 28.8%;
+    right: 61.67%;
+    top: 44.65%;
+    bottom: 50.32%;
+    margin-right: 10px;
+}
+
+main h1{
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #8CC79B;
+
 }

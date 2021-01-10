@@ -1,13 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-6 align-self-center">
-      <h1 class="headline">funguy</h1>
-      <p> splash page </p>
-      <div class="btn"><a routerLink="/login">Login</a></div>
-      <div class="btn"><a routerLink="/register">Register</a></div>
-      <div class="btn"><a routerLink="/onboarding1">Onboarding page</a></div>
-      <div class="btn"><a routerLink="/pantry">Pantry</a></div>
-
-    </div>
-  </div>
+<div class="splash">
+    <main>
+      <img src="../../assets/images/logo.png" alt="" style="float:left">
+      <a [routerLink]="['/onboarding1']"><h1>{{title}}</h1></a>
+    </main>
 </div>

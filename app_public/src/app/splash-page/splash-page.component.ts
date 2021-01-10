@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SplashPageComponent implements OnInit {
 
+  public title: String = 'funguy';
+
   constructor() { }
 
   ngOnInit(): void {

@@ -6,6 +6,7 @@ import { Onboarding1Component } from '../onboarding1/onboarding1.component';
 import { PantryComponent } from '../pantry/pantry.component';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { FrameworkComponent } from '../framework/framework.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   }, {
     path: 'pantry',
     component: PantryComponent
+  }, {
+    path: 'framework',
+    component: FrameworkComponent
   }
 ];
 

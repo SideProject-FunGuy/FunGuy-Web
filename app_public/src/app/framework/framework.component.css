@@ -1,0 +1,37 @@
+.framework{
+    background: #fcfffc;
+    min-height: 100vh;
+}
+header{
+    position: sticky;
+    display: flex;
+    padding: 20px;
+    padding-bottom: 0;
+    justify-content: center;
+    position: relative;
+}
+
+header img{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 7.5vw;
+
+}
+
+header h1{
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 127px;
+    height: 40px;
+    left: 167px;
+    top: 323px;
+}
