@@ -1,54 +1,63 @@
-<div class="owl-carousel-holder">
-  <owl-carousel-o class="carousel-section" [options]="customOptions">
-    <ng-container *ngFor="let slide of slidesStore">
-      <ng-template carouselSlide [id]="slide.id">
+<owl-carousel-o class="carousel-section" [options]="customOptions">
+  <!-- <ng-container *ngFor="let slide of slidesStore">
+    <ng-template carouselSlide [id]="slide.id">
 
-        <div class="slide-container">
-          <div class="header">
-            <img [src]="slide.logo" alt="">
-            <a href="">skip</a>
-          </div>
-          <h1 style="width: 70v">{{slide.text}}</h1>
-          <img [src]="slide.src" alt="" style="width: 80vw; max-width: 400px;">
-        <!--<div class="btn"><a href="">get started</a></div>-->
-        </div>
-
-      </ng-template>
-    </ng-container>
-
-      <!-- <div class="slide-container">
+      <div class="slide-container">
         <div class="header">
-          <img src="../../assets/images/logo.png" alt="">
+          <img [src]="slide.logo" alt="">
           <a href="">skip</a>
         </div>
-        <h1 style="width: 70vw">Time to take total control over your fridge.</h1>
-        <img src="../../assets/images/onboarding1.png" alt="" style="width: 80vw; max-width: 400px;">
+        <h1 style="width: 70v">{{slide.text}}</h1>
+        <img [src]="slide.src" alt="" style="width: 80vw; max-width: 400px;">
       </div>
 
     </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide-container">
-        <div class="header">
-          <img src="../../assets/images/logo.png" alt="">
-          <a href="">skip</a>
-        </div>
-        <h1 style="width: 60vw">Track your food waste.</h1>
-        <img src="../../assets/images/onboarding2.png" alt="" style="width: 80vw; max-width: 400px;">
+  </ng-container> -->
+
+  <!-- <div class="slide-container">
+    <div class="header">
+      <img src="../../assets/images/logo.png" alt="">
+      <a href="pantry">skip</a>
+    </div>
+    <h1 style="width: 70vw">Time to take total control over your fridge.</h1>
+    <img src="../../assets/images/onboarding1.png" alt="" style="width: 80vw; max-width: 400px;">
+  </div> -->
+
+  <!-- </ng-template> -->
+
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header">
+        <img src="../../assets/images/logo.png" alt="">
+        <a href="pantry">skip</a>
       </div>
+      <h1 style="width: 70vw">Time to take total control over your fridge.</h1>
+      <img src="../../assets/images/onboarding1.png" alt="" style="width: 80vw; max-width: 400px;">
+    </div>
 
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide-container">
-        <div class="header" style="margin-top: 0;">
-          <img src="../../assets/images/logo.png" alt="">
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header">
+        <img src="../../assets/images/logo.png" alt="">
+        <a href="pantry">skip</a>
+      </div>
+      <h1 style="width: 60vw">Track your food waste.</h1>
+      <img src="../../assets/images/onboarding2.png" alt="" style="width: 80vw; max-width: 400px; margin-left: -24px;">
+    </div>
 
-        </div>
-        <h1 style="width: 85vw">Know when your ingredients expire.</h1>
-        <img src="../../assets/images/onboarding3.png" alt="" style="width: 80vw; max-width: 400px;">
-        <div class="btn"><a href="">get started</a></div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header" style="margin-top: 0;">
+        <img src="../../assets/images/logo.png" alt="">
+
       </div>
       <h1 style="width: 85vw">Know when your ingredients expire.</h1>
-      <img src="../../assets/images/onboarding3.png" alt="" style="width: 80vw; max-width: 400px;">
-      <div class="btn"><a routerLink="/register">get started</a></div> -->
-  </owl-carousel-o>
-</div>
+      <img src="../../assets/images/onboarding3.png" alt="" style="width: 80vw; max-width: 400px; ">
+      <div class="btn"><a href="pantry">get started</a></div>
+    </div>
+
+
+  </ng-template>
+</owl-carousel-o>

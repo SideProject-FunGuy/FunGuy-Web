@@ -4,9 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { SplashPageComponent } from '../splash-page/splash-page.component';
 import { Onboarding1Component } from '../onboarding1/onboarding1.component';
 import { PantryComponent } from '../pantry/pantry.component';
+import { StatisticsComponent } from '../statistics/statistics.component';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
-import { FrameworkComponent } from '../framework/framework.component';
+import { SearchComponent } from '../search/search.component';
+import { NewItemComponent } from '../new-item/new-item.component';
 
 const routes: Routes = [
   {
@@ -14,7 +16,7 @@ const routes: Routes = [
     component: SplashPageComponent
   },
   {
-    path:'onboarding1',
+    path: 'onboarding1',
     component: Onboarding1Component
   },
   {
@@ -28,8 +30,14 @@ const routes: Routes = [
     path: 'pantry',
     component: PantryComponent
   }, {
-    path: 'framework',
-    component: FrameworkComponent
+    path: 'statistics',
+    component: StatisticsComponent
+  }, {
+    path: 'search',
+    component: SearchComponent
+  }, {
+    path: 'new-item',
+    component: NewItemComponent
   }
 ];
 
