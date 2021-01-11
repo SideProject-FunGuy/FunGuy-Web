@@ -1,178 +1,18 @@
 <div class="search">
-<<<<<<< HEAD
-
-    <header>
-        <img src="../../assets/images/logo.png" alt="">
-        <h1>New Item</h1>
-=======
     <header>
         <img src="../../assets/images/logo.png" alt="">
         <h1>Add to Pantry</h1>
->>>>>>> search-pages
     </header>
 
     <main>
         <div class="searchbar">
-<<<<<<< HEAD
-            <input name="searchInput" type="text" placeholder="" (keyup)="onKey($event)">
-            <img src="../../assets/images/pantry/search.png" alt="">
-        </div>
-        <p>{{values}}</p>
-        <div class="categories-container">
-            <ul class="categories">
-                <li class="active" data-filter="all">All</li>
-                <li data-filter="fresh">Fresh
-                </li>
-                <li data-filter="use-soon">Use Soon</li>
-                <li data-filter="expired">Expired</li>
-            </ul>
-        </div>
-
-        <div class="food-items">
-            <div class="item-card" *ngFor="let food of foods">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/fruits.png" alt="">
-                    <div class="food-info">
-                        <h2>{{food.name}}</h2>
-                        <p>{{food.id}}</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/fish.png" alt="">
-                    <div class="food-info">
-                        <h2>Salmon</h2>
-                        <p>Expired!</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="../../assets/images/pantry/expired.png" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/grains.png" alt="">
-                    <div class="food-info">
-                        <h2>Rice</h2>
-                        <p>3 months left</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/dairy.png" alt="">
-                    <div class="food-info">
-                        <h2>Gouda</h2>
-                        <p>Expired!</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="../../assets/images/pantry/expired.png" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/meat.png" alt="">
-                    <div class="food-info">
-                        <h2>Steak</h2>
-                        <p>2 days left</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/vegetables.png" alt="">
-                    <div class="food-info">
-                        <h2>Broccoli</h2>
-                        <p>5 days left</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/fruits.png" alt="">
-                    <div class="food-info">
-                        <h2>Cauliflower</h2>
-                        <p>1 week left</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/grains.png" alt="">
-                    <div class="food-info">
-                        <h2>Rice</h2>
-                        <p>3 months left</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="left-content">
-                    <img src="../../assets/images/pantry/dairy.png" alt="">
-                    <div class="food-info">
-                        <h2>Gouda</h2>
-                        <p>Expired!</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="../../assets/images/pantry/expired.png" class="expiry-alert" alt="">
-                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-                </div>
-            </div>
-
-        </div>
-
-
-        <button><img src="../../assets/images/pantry/add.png" alt=""></button>
-=======
             <input type="text" placeholder="Search your pantry or fridge">
             <img src="../../assets/images/pantry/search.png" alt="">
         </div>
->>>>>>> search-pages
     </main>
     <nav class="menu">
         <a href="pantry"><img src="../../assets/images/list-active.png" alt="pantry"></a>
         <a href="statistics"><img src="../../assets/images/stats-inactive.png" alt="statistics"></a>
     </nav>
 
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> search-pages
