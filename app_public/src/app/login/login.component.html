@@ -1,1 +1,26 @@
-<p>login works!</p>
+<owl-carousel-o class="carousel-section" [options]="customOptions">
+
+  <ng-template carouselSlide>
+    <div class="slide-container">
+      <div class="header">
+        <img src="../../assets/images/logo.png" alt="">
+      </div>
+      <h1 style="width: 70vw">Sign In</h1>
+      <form style="width: 70vw">
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="signup">SIGN IN</button>
+        <br>
+        <small id="loginHelp" class="form-text text-muted">Don't have an account? <a [routerLink]="['/register']">Sign up.</a></small>
+      </form>
+    </div>
+
+
+
+  </ng-template>
+</owl-carousel-o>

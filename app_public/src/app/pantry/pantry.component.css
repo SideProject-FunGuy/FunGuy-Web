@@ -1,74 +1,16 @@
 .pantry{
     background: #fcfffc;
     min-height: 100vh;
-}
-header{
-    position: sticky;
-    display: flex;
-    padding: 20px;
-    padding-bottom: 0;
-    justify-content: center;
-    position: relative;
-
+    width: 100vw;
+    padding-bottom: calc(max(9vh, 70px));
 }
 
-header img{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: 7.5vw;
-
-}
-
-header h1{
-    font-weight: 700;
-    font-size: 1.25rem;
-}
 
 main{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.searchbar{
-    position: relative;
-    width: 85vw;
-    height: 2.5rem;
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
-.searchbar input{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #FFFFFF;
-/* Darker shadow */
-
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    border: none;
-    padding: 0px 8px 0px 16px;
-}
-
-.searchbar input::placeholder{
-    color: #d5d5d5;
-    font-weight: 400;
-}
-
-.searchbar input:active, .searchbar input:focus{
-    border: none;
-    outline: none;
-}
-.searchbar img{
-    position: absolute;
-    width: 1.75rem;
-    height: auto;
-    right: 3vw;
-    top: 50%;
-    transform: translateY(-50%);
-
 }
 
 .food-items{
@@ -156,7 +98,7 @@ button{
     border: none;
     border-radius: 50%;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
-    bottom: 20vw;
+    bottom: 12vh;
     right: 10vw;
 }
 
@@ -166,30 +108,4 @@ button img{
     height: auto;
 }
 
-.categories-container{
-    align-self: flex-start;
-    padding-left: 7.5vw;
-    margin-bottom: 20px;
-}
-.categories{
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    
-    
-    
-}
-.categories li{
-    font-size: .9rem;
-    padding: 10px 12px;
-    box-shadow: 0px 2px 4px rgba(105, 105, 105, 0.25);
-border-radius: 8px;
-    background-color: #fff;
-    margin-right: 8px;
-    color: #aaa;
-}
 
-.categories li.active{
-    background-color: #3e3e3e;
-    color: #fff;
-}

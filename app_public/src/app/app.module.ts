@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {APP_BASE_HREF} from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,7 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { Onboarding1Component } from './onboarding1/onboarding1.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PantryComponent } from './pantry/pantry.component';
-import { FrameworkComponent } from './framework/framework.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { SearchComponent } from './search/search.component';
+import { NewItemComponent } from './new-item/new-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FrameworkComponent } from './framework/framework.component';
     RegisterComponent,
     LoginComponent,
     PantryComponent,
-    FrameworkComponent,
+    StatisticsComponent,
+    SearchComponent,
+    NewItemComponent,
   ],
   imports: [
     BrowserModule,
