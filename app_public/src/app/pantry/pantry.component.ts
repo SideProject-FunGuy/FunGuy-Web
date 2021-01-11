@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ShelflifeDataService } from '../shelflife-data.service';
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Food {
   id: string;
@@ -31,7 +29,7 @@ export class Food {
 })
 export class PantryComponent implements OnInit {
 
-  constructor(private shelflifeDataService: ShelflifeDataService, private http: HttpClient) { }
+  constructor(private shelflifeDataService: ShelflifeDataService) { }
 
   public foods: Food[]=[];
 

@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PantryComponent } from './pantry/pantry.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { SearchComponent } from './search/search.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SearchComponent } from './search/search.component';
     PantryComponent,
     StatisticsComponent,
     SearchComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,
