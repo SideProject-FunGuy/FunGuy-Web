@@ -26,14 +26,13 @@ main{
     background: #FFFFFF;
     margin-bottom: 16px;
     padding: 0 16px;
-/* Darker shadow */
 
-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
 
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .food-info div img{
