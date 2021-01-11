@@ -17,7 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PantryComponent } from './pantry/pantry.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { SearchComponent } from './search/search.component';
+<<<<<<< HEAD
 import { SearchResultComponent } from './search-result/search-result.component';
+=======
+import { NewItemComponent } from './new-item/new-item.component';
+>>>>>>> search-pages
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { SearchResultComponent } from './search-result/search-result.component';
     PantryComponent,
     StatisticsComponent,
     SearchComponent,
+<<<<<<< HEAD
     SearchResultComponent,
+=======
+    NewItemComponent,
+>>>>>>> search-pages
   ],
   imports: [
     BrowserModule,
