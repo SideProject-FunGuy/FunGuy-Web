@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  h1(class=h1Classes) #{title}
-  each food in foods
-    .card
-      .card-block
-        h4
-          a(href='/guides/'+ food.id)=food.name
-          p=food.id
-          p=food.url
+  div.text-center
+        h1(class=h1Classes) #{title}
+        each food in foods
+          .card
+            .card-block
+              h4
+                a(href='/guides/'+ food.id)=food.name
+                p=food.id
+                p=food.url
