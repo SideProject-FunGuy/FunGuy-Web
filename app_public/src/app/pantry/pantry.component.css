@@ -19,6 +19,7 @@ main{
 }
 
 .food-items .item-card{
+    position: relative;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -28,6 +29,7 @@ main{
     box-shadow: 0px 2px 4px rgba(105, 105, 105, 0.25);
     border-radius: 8px;
     margin-bottom: 10px;
+    
 }
 
 
@@ -84,6 +86,7 @@ main{
     width: auto;
     /* height: auto; */
 }
+
 .right-content img.expiry-alert{
     height: 40%;
     width: auto;
@@ -109,3 +112,39 @@ button img{
 }
 
 
+.remove-item{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 136px;
+    z-index: -1;
+}
+
+.item-card.swipe{
+    transform: translateX(-144px);
+    transition: 0.5s;
+}
+.item-card.swipe > .remove-item{
+    transform: translateX(144px);
+}
+.remove-item h3{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    border-radius: 8px;
+}
+
+.eat-item{
+    background-color: #8CC79B;
+}
+
+.trash-item{
+    background-color: #F24C27;
+}
