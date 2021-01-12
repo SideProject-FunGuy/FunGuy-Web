@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     font-weight: 700;
     font-size: 2.5rem;
     color: #3E3E3E;
@@ -13,13 +13,6 @@ form {
 
 }
 
-/*
-.carousel-section{
-    width: 100vw;
-    height: 400px;
-    float: left;
-    margin-top: 60px;
-} */
 
 .header{
     display: flex;
@@ -55,4 +48,118 @@ form {
 
 .btn a{
     color: #fff;
+} */
+/* h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #3E3E3E;
+    position: absolute;
+    left: 20.68%;
+    right: 23.84%;
+    top: 14.23%;
+    bottom: 79.48%;
+}
+
+form {
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+}
+
+.header img{
+    width: 30px;
+    height: 30px;
+}
+
+.slide-container{
+    height: 90vh;
+    padding: 24px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.btn{
+    background-color: #8CC79B;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    text-transform: uppercase;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 3vh;
+
+}
+
+.btn a{
+    color: #fff;
+} */
+
+
+.register{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+    background-color: #fcfffc;
+    padding-left: 15vw;
+    padding-top: 20vh;
+
+}
+
+header{
+    position: absolute;
+    left: 0;
+}
+
+  input{
+    position: relative;
+    width: 70vw;
+    height: 100%;
+    background: #FFFFFF;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #D5D5D5;
+    padding: 0px 8px 0px 16px;
+}
+
+  input::placeholder{
+
+    font-weight: 400;
+}
+
+  input:active,   input:focus{
+    border: none;
+    outline: none;
+}
+
+.btn{
+    height: 46px;
+    border-radius: 10px;
+    width: 70vw;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+small{
+    /* width: 100vw; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    
+}
+small a{
+    color: #8CC79B;
 }

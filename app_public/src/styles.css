@@ -132,7 +132,8 @@ border-radius: 8px;
     font-weight: 600;
     align-self: center;
     margin-top: 3vh;
-
+    outline: none;
+    border: none;
 }
 
 .btn a{
