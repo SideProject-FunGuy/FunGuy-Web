@@ -22,10 +22,13 @@
             <input class="form-control" id="expiryDuration" name="expiryDuration" placeholder="Expiry Duration" [(ngModel)]="newFood.expiryDuration">
           </div>
           <div class="form-group">
-            <input class="form-control" id="expiryDate" name="expiryDate" placeholder="Expiry Date" [(ngModel)]="newFood.expiryDate">
+            <input class="form-control" type="date" id="expiryDate" name="expiryDate" placeholder="Expiry Date" [(ngModel)]="newFood.expiryDate" required/>
           </div>
           <div class="form-group">
-            <input class="form-control" id="category" name="category" placeholder="Category" [(ngModel)]="newFood.category">
+            <select class="form-control" name="category" placeholder="Category" [(ngModel)]="newFood.category">
+              <option disabled>Choose Category</option>
+              <option *ngFor="let category of categoryList">{{category}}</option>
+            </select>
           </div>
 
           <!-- <div class="food-expiry">

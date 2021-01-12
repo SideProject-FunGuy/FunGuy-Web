@@ -10,29 +10,27 @@ const foodSchema = new mongoose.Schema({
     default: Date.now
   },
   "expiryDuration": String,
-  "expiryDate": String,
-  "status": {
-    enum:[
-      "Fresh",
-      "Use Soon",
-      "Expired",
-      null
-    ]
-  },
-  "category": {
-    enum:[
-      "Fruits",
-      "Vegetables",
-      "Meat & Poultry",
-      "Fish & Shellfish",
-      "Nuts, Grains & Pasta",
-      "Condiments & Oils",
-      "Snacks & Baked Goods",
-      "Beverages",
-      "Herbs & Spices",
-      null
-    ]
-  }
+  "expiryDate": Date,
+  "category": String
 });
+
+Date.prototype.addDays = function(days){
+  var date = new Date(this.valueOf());
+  date.setDate(date.getDate()+days);
+  return date;
+}
+
+foodSchema.virtual('status').get(function(){
+  var fresh = this.created;
+  fresh.addDays(3);
+
+  if(this.expiryDate <= this.created ){
+    return "Expired"
+  } else if(this.expiryDate > this.fresh) {
+    return "Fresh"
+  }
+})
+
+foodSchema.set({getters: true, virtuals: true});
 
 mongoose.model('Food', foodSchema);

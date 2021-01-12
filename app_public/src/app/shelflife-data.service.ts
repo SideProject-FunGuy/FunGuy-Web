@@ -39,6 +39,15 @@ export class ShelflifeDataService {
       .catch(this.handleError);
   }
 
+  public getPantryFoods():Promise<Food[]>{
+    const url: string=`${this.apiBaseUrl}/pantry`;
+    return this.http
+      .get(url)
+      .toPromise()
+      .then(response => response as Food[])
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('Something went wrong', error);
     return Promise.reject(error.message || error);

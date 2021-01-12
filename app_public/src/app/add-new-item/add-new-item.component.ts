@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShelflifeDataService } from '../shelflife-data.service';
 import { NewFood } from '../food';
 
@@ -9,6 +10,18 @@ import { NewFood } from '../food';
 })
 export class AddNewItemComponent implements OnInit {
 
+  categoryList: any=[
+    "Fruits",
+    "Vegetables",
+    "Meat & Poultry",
+    "Fish & Shellfish",
+    "Nuts, Grains & Pasta",
+    "Condiments & Oils",
+    "Snacks & Baked Goods",
+    "Beverages",
+    "Herbs & Spices",
+  ]
+
   public newFood: NewFood = {
     name: '',
     expiryDuration: '',
@@ -16,7 +29,10 @@ export class AddNewItemComponent implements OnInit {
     category: ''
   };
 
-  constructor(private shelflifeDataService: ShelflifeDataService) { }
+  constructor(
+    private shelflifeDataService: ShelflifeDataService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +42,7 @@ export class AddNewItemComponent implements OnInit {
       .then((food: NewFood)=>{
         console.log('Food saved', food);
       });
-    this.resetForm();
+      this.router.navigate(['/pantry']);
   }
 
   private resetForm(): void{
