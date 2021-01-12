@@ -9,6 +9,7 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { SearchComponent } from '../search/search.component';
 import { NewItemComponent } from '../new-item/new-item.component';
+import { AddNewItemComponent}  from '../add-new-item/add-new-item.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   }, {
     path: 'new-item',
     component: NewItemComponent
+  },
+  {
+    path:'add-new',
+    component: AddNewItemComponent
   }
 ];
 

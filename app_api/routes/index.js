@@ -20,7 +20,7 @@ router
   .get(ctrlSearch.searchItem)
 
 router
-  .route('/new/:item')
+  .route('/new')
   .post(ctrlPantry.addPantryItem);
 
 module.exports = router;

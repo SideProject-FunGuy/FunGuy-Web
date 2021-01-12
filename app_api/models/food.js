@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 
 const foodSchema = new mongoose.Schema({
-  "id": String,
-  "name": String,
-  "location": String,
-  "expiration": String,
-  "expirationTime": Number,
-  "tips": String,
+  "name": {
+    type: String,
+    required: true
+  },
+  "created": {
+    type: Date,
+    default: Date.now
+  },
+  "expiryDuration": String,
+  "expiryDate": Number,
   "status": {
     enum:[
       "Fresh",
@@ -15,7 +19,6 @@ const foodSchema = new mongoose.Schema({
       null
     ]
   },
-  "expiry": Number,
   "category": {
     enum:[
       "Fruits",

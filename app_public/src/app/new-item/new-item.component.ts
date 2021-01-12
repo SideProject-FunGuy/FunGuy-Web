@@ -1,26 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ShelflifeDataService } from '../shelflife-data.service';
-
-export class Food {
-  id: string;
-  name: string;
-  url: string;
-  // food_location: string;
-  // food_tips: string[];
-  // expirationString: string;
-  // expirationTime: number;
-  // category: string;
-  constructor(){
-    this.id='';
-    this.name='';
-    this.url='';
-    // this.food_location='';
-    // this.food_tips=[];
-    // this.expirationString='';
-    // this.expirationTime= 0;
-    // this.category='none';
-  }
-}
+import { ApiFood } from '../food';
 
 @Component({
   selector: 'app-new-item',
@@ -30,7 +10,7 @@ export class Food {
 export class NewItemComponent implements OnInit {
 
   value='';
-  public foods: Food[]=[];
+  public foods: ApiFood[]=[];
 
   constructor(private shelflifeDataService: ShelflifeDataService) { }
 

@@ -1,26 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShelflifeDataService } from '../shelflife-data.service';
+import { ApiFood } from '../food';
 
-export class Food {
-  id: string;
-  name: string;
-  url: string;
-  // food_location: string;
-  // food_tips: string[];
-  // expirationString: string;
-  // expirationTime: number;
-  // category: string;
-  constructor(){
-    this.id='';
-    this.name='';
-    this.url='';
-    // this.food_location='';
-    // this.food_tips=[];
-    // this.expirationString='';
-    // this.expirationTime= 0;
-    // this.category='none';
-  }
-};
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -32,7 +13,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private shelflifeDataService: ShelflifeDataService) { }
 
-  public foods: Food[]=[];
+  public foods: ApiFood[]=[];
 
   ngOnInit(){
     this.getFoods();

@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { APP_BASE_HREF } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import
 
 import { AppComponent } from './app.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
@@ -18,6 +20,7 @@ import { PantryComponent } from './pantry/pantry.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { SearchComponent } from './search/search.component';
 import { NewItemComponent } from './new-item/new-item.component';
+import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,17 @@ import { NewItemComponent } from './new-item/new-item.component';
     StatisticsComponent,
     SearchComponent,
     NewItemComponent,
+    AddNewItemComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

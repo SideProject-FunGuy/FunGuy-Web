@@ -49,17 +49,24 @@ const pantryItem = async(req, res)=>{
 };
 
 const addPantryItem = async(req, res)=>{
-  // console.log('called add pantry item');
-  // let foodDocument = new Food({
-  //   id: "18360",
-  //   name: "Spaghetti Sauce / Pasta Sauce, Cream-Based, Commercially Canned or Bottled - Opened"
-  // });
-  // console.log(foodDocument);
-  // foodDocument.save(function(err, food){
-  //   if(err) return console.error(err);
-  //   console.log(food.name +'saved');
-  // });
-
+  Food.create({
+    name: req.body.name,
+    expiryDuration: req.body.expiryDuration,
+    expiryDate: req.body.expiryDate,
+    status: "Fresh",
+    category: req.body.category
+  },
+  (err, food)=>{
+    if(err){
+      res
+        .status(400)
+        .json(err);
+    } else {
+      res
+        .status(201)
+        .json(food);
+    }
+  });
 };
 
 const deletePantryItem = async(req, res)=>{

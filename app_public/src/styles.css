@@ -143,3 +143,5 @@ border-radius: 8px;
 .btn:hover{
     background-color: #8CC79B;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
