@@ -27,10 +27,12 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
-  }, {
+  },
+  {
     path: 'pantry',
     component: PantryComponent
-  }, {
+  },
+  {
     path: 'statistics',
     component: StatisticsComponent
   }, {

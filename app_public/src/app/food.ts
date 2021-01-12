@@ -13,6 +13,7 @@ export class NewFood {
 };
 
 export class Food {
+  _id: string;
   name: string;
   created: Date;
   expiryDuration: string;
@@ -21,6 +22,7 @@ export class Food {
   category: string;
 
   constructor(){
+    this._id='';
     this.name='';
     this.created= new Date();
     this.expiryDuration='';

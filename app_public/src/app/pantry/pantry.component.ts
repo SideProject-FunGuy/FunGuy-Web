@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShelflifeDataService } from '../shelflife-data.service';
-import { ApiFood } from '../food';
+import { Food } from '../food';
 
 @Component({
   selector: 'app-pantry',
@@ -8,21 +9,29 @@ import { ApiFood } from '../food';
   styleUrls: ['./pantry.component.css']
 })
 export class PantryComponent implements OnInit {
+  public foods: Food[]=[];
 
-  constructor(private shelflifeDataService: ShelflifeDataService) { }
-
-  public foods: ApiFood[]=[];
+  constructor(
+    private shelflifeDataService: ShelflifeDataService,
+    private router: Router
+  ) { }
 
 
   ngOnInit(){
-    this.getFoods();
+    this.getPantryFoods();
   }
 
-  private getFoods(): void{
+  public delete(id: String):void{
     this.shelflifeDataService
-      .getFoods()
+      .deleteFood(id)
+  }
+
+  private getPantryFoods(): void{
+    this.shelflifeDataService
+      .getPantryFoods()
         .then(foundFoods => this.foods = foundFoods);
   }
+
 
   private handleError(error: any): Promise<any> {
     console.error('Something went wrong', error);

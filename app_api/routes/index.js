@@ -9,7 +9,7 @@ router
 
 router
   .route('/pantry/:item')
-  .get(ctrlPantry.pantryItem);
+  .delete(ctrlPantry.deletePantryItem);
 
 router
   .route('/search/:search')
