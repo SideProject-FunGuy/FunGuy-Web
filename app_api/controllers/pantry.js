@@ -48,12 +48,12 @@ const pantryItem = async(req, res)=>{
   }
 };
 
-const addPantryItem = async(req, res)=>{
+const addPantryItem = (req, res)=>{
+  console.log('Add pantryItem called with ' + req.body.name);
   Food.create({
     name: req.body.name,
     expiryDuration: req.body.expiryDuration,
     expiryDate: req.body.expiryDate,
-    status: "Fresh",
     category: req.body.category
   },
   (err, food)=>{

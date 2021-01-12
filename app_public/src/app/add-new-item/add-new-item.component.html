@@ -9,7 +9,7 @@
           <input type="text" placeholder="Search your pantry or fridge">
           <img src="../../assets/images/pantry/search.png" alt="">
       </div>
-      <form (submit)="onNewFoodSubmit()">
+      <form (ngSubmit)="onNewFoodSubmit()">
         <div class="food-info">
           <!-- <div class="food-name">
               <p>Name</p>
@@ -44,7 +44,7 @@
               <img src="../../assets/images/add-item/arrow.png" alt="arrow">
           </div> -->
         </div>
-        <div type="submit" class="btn"><a href=''>add item</a></div>
+        <button type="submit" class="btn">add item</button>
       </form>
     </main>
 

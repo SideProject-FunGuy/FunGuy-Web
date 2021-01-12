@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShelflifeDataService } from '../shelflife-data.service';
-import { Food } from '../food';
+import { NewFood } from '../food';
 
 @Component({
   selector: 'app-add-new-item',
@@ -9,10 +9,10 @@ import { Food } from '../food';
 })
 export class AddNewItemComponent implements OnInit {
 
-  public newFood: Food = {
+  public newFood: NewFood = {
     name: '',
     expiryDuration: '',
-    expiryDate: new Date(),
+    expiryDate: '',
     category: ''
   };
 
@@ -23,9 +23,17 @@ export class AddNewItemComponent implements OnInit {
 
   public onNewFoodSubmit(): void{
     this.shelflifeDataService.addFood(this.newFood)
-      .then((food: Food)=>{
+      .then((food: NewFood)=>{
         console.log('Food saved', food);
-      })
+      });
+    this.resetForm();
+  }
+
+  private resetForm(): void{
+    this.newFood.name= '';
+    this.newFood.expiryDuration= '';
+    this.newFood.expiryDate= '';
+    this.newFood.category='';
   }
 
 }

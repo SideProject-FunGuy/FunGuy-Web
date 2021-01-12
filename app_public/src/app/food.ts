@@ -1,5 +1,20 @@
+export class NewFood {
+  name: string;
+  expiryDuration: string;
+  expiryDate: string;
+  category: string;
+
+  constructor(){
+    this.name='';
+    this.expiryDuration='';
+    this.expiryDate='';
+    this.category='';
+  }
+};
+
 export class Food {
   name: string;
+  created: Date;
   expiryDuration: string;
   expiryDate: Date;
   status: string;
@@ -7,6 +22,7 @@ export class Food {
 
   constructor(){
     this.name='';
+    this.created= new Date();
     this.expiryDuration='';
     this.expiryDate=new Date();
     this.status='';
@@ -23,6 +39,5 @@ export class ApiFood {
     this.id='';
     this.name='';
     this.url='';
-
   }
 };

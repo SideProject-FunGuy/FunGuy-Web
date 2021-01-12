@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiFood } from './food';
 import { Food } from './food';
+import { NewFood } from './food';
 
 
 @Injectable({
@@ -28,15 +29,13 @@ export class ShelflifeDataService {
       .catch(this.handleError);
   }
 
-  public addFood(formData: Food): Promise<Food>{
+  public addFood(formData: NewFood): Promise<NewFood>{
     const url: string=`${this.apiBaseUrl}/new`;
-    const httpOptions={
-      
-    };
+
     return this.http
-      .post(url, formData, httpOptions)
+      .post(url, formData)
       .toPromise()
-      .then(response => response as Food)
+      .then(response => response as NewFood)
       .catch(this.handleError);
   }
 

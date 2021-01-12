@@ -5,7 +5,7 @@
     padding-bottom: calc(max(9vh, 70px));
 }
 
-.btn{
+button{
     width: 85vw;
 }
 
