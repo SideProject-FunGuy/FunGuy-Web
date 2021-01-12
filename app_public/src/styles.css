@@ -139,3 +139,7 @@ border-radius: 8px;
 .btn a{
     color: #fff;
 }
+
+.btn:hover{
+    background-color: #8CC79B;
+}
