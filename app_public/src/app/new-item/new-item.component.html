@@ -5,11 +5,28 @@
         <h1>New Item</h1>
     </header>
     <main>
-        <div class="searchbar">
-            <input type="text" placeholder="Search your pantry or fridge">
-            <img src="../../assets/images/pantry/search.png" alt="">
+      <div class="searchbar">
+          <input #box (keyup.enter)="onEnter(box.value)" type="text" placeholder="Search your pantry or fridge">
+          <img src="../../assets/images/pantry/search.png" alt="">
+      </div>
+
+      <div class="food-items">
+        <div class="item-card" *ngFor="let food of foods">
+            <div class="left-content">
+                <img src="../../assets/images/pantry/fruits.png" alt="">
+                <div class="food-info">
+                    <h2>{{food.name}}</h2>
+                    <p>{{food.id}}</p>
+                </div>
+            </div>
+            <div class="right-content">
+                <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
+                <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
+            </div>
         </div>
-        <div class="food-info">
+      </div>
+
+        <!-- <div class="food-info">
             <div class="food-name">
                 <p>Name</p>
                 <img src="../../assets/images/add-item/utensils.png" alt="utensils">
@@ -26,8 +43,9 @@
                 <img src="../../assets/images/add-item/arrow.png" alt="arrow">
             </div>
         </div>
+        -->
 
-        <div class="btn"><a href="pantry">add item</a></div>
+        <div class="btn"><a href="pantry">add new item</a></div>
     </main>
 
     <nav class="menu">
