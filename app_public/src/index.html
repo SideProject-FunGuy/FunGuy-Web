@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Funguy Public</title>
@@ -13,14 +14,57 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <script type="application/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-<script type="application/javascript" src="../node_modules/owl.carousel/dist/owl.carousel.js"></script>
+  <script type="application/javascript" src="../node_modules/owl.carousel/dist/owl.carousel.js"></script>
 </head>
+
 <body>
   <app-root></app-root>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
   <script src="assets/javascripts/bootstrap.min.js"></script>
 
+  <script type="text/javascript">
+
+
+
+    window.onload = function () {
+      const foods = document.getElementsByClassName('item-card');
+      for (var i = 0; i < foods.length; i++) {
+        let curFood = foods[i];
+        curFood.addEventListener('click', function () {
+          curFood.classList.toggle('swipe');
+          // console.log(curFood.classList)
+
+        });
+        let eatBtn = document.getElementsByClassName('eat-item')[i];
+        eatBtn.addEventListener('click', function () {
+          console.log('eaten');
+          curFood.remove();
+        })
+
+        let trashBtn = document.getElementsByClassName('trash-item')[i];
+        trashBtn.addEventListener('click', function () {
+          console.log('trashed');
+          curFood.remove();
+        })
+
+        let cardLeft = document.getElementsByClassName('left-content')[i];
+        let cardRight = document.getElementsByClassName('right-content')[i];
+
+
+      }
+
+
+
+    }
+
+
+  </script>
 </body>
+
 </html>
