@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
@@ -20,6 +20,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { SearchComponent } from './search/search.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { AddNewItemComponent } from './add-new-item/add-new-item.component';
+import { QuickAddComponent } from './quick-add/quick-add.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AddNewItemComponent } from './add-new-item/add-new-item.component';
     SearchComponent,
     NewItemComponent,
     AddNewItemComponent,
+    QuickAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +43,8 @@ import { AddNewItemComponent } from './add-new-item/add-new-item.component';
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
+    // MatDatepickerModule,
+    // MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
