@@ -32,7 +32,6 @@ export class PantryComponent implements OnInit {
         .then(foundFoods => this.foods = foundFoods);
   }
 
-
   private handleError(error: any): Promise<any> {
     console.error('Something went wrong', error);
     return Promise.reject(error.message || error);

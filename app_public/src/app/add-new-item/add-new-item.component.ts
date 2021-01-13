@@ -13,6 +13,7 @@ export class AddNewItemComponent implements OnInit {
   categoryList: any=[
     "Fruits",
     "Vegetables",
+    "Dairy & Eggs",
     "Meat & Poultry",
     "Fish & Shellfish",
     "Nuts, Grains & Pasta",
