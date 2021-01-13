@@ -1,41 +1,43 @@
 <div class="new-item">
 
-    <header>
-        <img src="../../assets/images/logo.png" alt="">
-        <h1>New Item</h1>
-    </header>
-    <main>
-      <div class="searchbar">
-          <input type="text" placeholder="Search your pantry or fridge">
-          <img src="../../assets/images/pantry/search.png" alt="">
-      </div>
-      <form (ngSubmit)="onNewFoodSubmit()">
-        <div class="food-info">
-          <!-- <div class="food-name">
+  <header>
+    <img src="../../assets/images/logo.png" alt="">
+    <h1>New Item</h1>
+  </header>
+  <main>
+    <div class="searchbar">
+      <input type="text" placeholder="Search your pantry or fridge">
+      <img src="../../assets/images/pantry/search.png" alt="">
+    </div>
+    <form (ngSubmit)="onNewFoodSubmit()">
+      <div class="food-info">
+        <!-- <div class="food-name">
               <p>Name</p>
               <img src="../../assets/images/add-item/utensils.png" alt="utensils">
           </div> -->
-          <div class="form-group">
-            <input class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="newFood.name">
-          </div>
-          <div class="form-group">
-            <input class="form-control" id="expiryDuration" name="expiryDuration" placeholder="Expiry Duration" [(ngModel)]="newFood.expiryDuration">
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="date" id="expiryDate" name="expiryDate" placeholder="Expiry Date" [(ngModel)]="newFood.expiryDate" required/>
-          </div>
-          <div class="form-group">
-            <select class="form-control" name="category" placeholder="Category" [(ngModel)]="newFood.category">
-              <option disabled>Choose Category</option>
-              <option *ngFor="let category of categoryList">{{category}}</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="newFood.name">
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="expiryDuration" name="expiryDuration" placeholder="Expiry Duration"
+            [(ngModel)]="newFood.expiryDuration">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="date" id="expiryDate" name="expiryDate" placeholder="Expiry Date"
+            [(ngModel)]="newFood.expiryDate" required />
+        </div>
+        <div class="form-group">
+          <select class="form-control" name="category" placeholder="Category" [(ngModel)]="newFood.category">
+            <option value="" disabled selected>Choose Category</option>
+            <option *ngFor="let category of categoryList">{{category}}</option>
+          </select>
+        </div>
 
-          <!-- <div class="food-expiry">
+        <!-- <div class="food-expiry">
               <p>Expiry Duration</p>
               <img src="../../assets/images/add-item/expiry.png" alt="clock">
           </div> -->
-          <!-- <div class="food-expiry">
+        <!-- <div class="food-expiry">
               <p>Expiry Date</p>
               <img src="../../assets/images/add-item/expiry.png" alt="clock">
           </div>
@@ -46,13 +48,13 @@
               </div>
               <img src="../../assets/images/add-item/arrow.png" alt="arrow">
           </div> -->
-        </div>
-        <button type="submit" class="btn">add item</button>
-      </form>
-    </main>
+      </div>
+      <button type="submit" class="btn">add item</button>
+    </form>
+  </main>
 
-    <nav class="menu">
-        <a href="pantry"><img src="../../assets/images/list-active.png" alt="pantry"></a>
-        <a href="statistics"><img src="../../assets/images/stats-inactive.png" alt="statistics"></a>
-    </nav>
+  <nav class="menu">
+    <a href="pantry"><img src="../../assets/images/list-active.png" alt="pantry"></a>
+    <a href="statistics"><img src="../../assets/images/stats-inactive.png" alt="statistics"></a>
+  </nav>
 </div>
