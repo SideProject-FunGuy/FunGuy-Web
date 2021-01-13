@@ -11,6 +11,7 @@ import { SearchComponent } from '../search/search.component';
 import { NewItemComponent } from '../new-item/new-item.component';
 import { AddNewItemComponent } from '../add-new-item/add-new-item.component';
 import { QuickAddComponent } from '../quick-add/quick-add.component';
+
 const routes: Routes = [
   {
     path: '',
