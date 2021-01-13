@@ -14,8 +14,6 @@ header{
     justify-content: center;
     background-color: #fcfffc;
     z-index: 5;
-    
-
 }
 
 header img{
@@ -134,6 +132,7 @@ border-radius: 8px;
     margin-top: 3vh;
     outline: none;
     border: none;
+    color: #fff;
 }
 
 .btn a{

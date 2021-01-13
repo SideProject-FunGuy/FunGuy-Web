@@ -25,10 +25,12 @@ img{
     align-items: center;
     flex-direction: column;
     width: 90vw;
+    margin-bottom: 180px;
 }
 
 .items-category{
     margin: 20px 0;
+    
 }
 .items-category h2{
     margin-left: -5px;
@@ -66,4 +68,21 @@ h1{
 
 .quick-add{
     padding: 20px;
+    background-color: #fcfffc;
+}
+
+.btn-container{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -20px;
+    width: 100vw;
+    height: 180px;
+    background: linear-gradient(173.48deg, rgba(255, 255, 255, 0) 22.96%, #F2A649 157.43%), linear-gradient(180deg, rgba(252, 255, 252, 0) 0%, #FCFFFC 15.62%);
+}
+
+.btn{
+    margin: 0;
 }

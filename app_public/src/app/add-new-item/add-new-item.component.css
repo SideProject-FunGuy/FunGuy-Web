@@ -9,6 +9,26 @@ button{
     width: 85vw;
 }
 
+input, select{
+    border: none;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none!important;
+}
+
+input:focus, input.form-control:focus, select:focus,  select.form-control:focus{
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
 .food-info {
     margin-top: 32px;
 }
@@ -129,3 +149,7 @@ main{
     /* height: auto; */
     /* margin-right: 8px;
 } */
+
+.btn{
+    color: #fff;
+}

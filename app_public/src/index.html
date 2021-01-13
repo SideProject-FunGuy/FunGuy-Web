@@ -35,12 +35,23 @@
 
 
     window.onload = function () {
+
+      const pantryList = document.getElementById('pantry-list');
+      const noItemsImg = document.getElementById('no-items');
+      if (pantryList.innerHTML === "") {
+        noItemsImg.classList.add('visible');
+      } else {
+        if (noItemsImg.classList.contains('visible')) {
+          noItemsImg.classList.remove('visible');
+        }
+
+      }
       const foods = document.getElementsByClassName('item-card');
       for (var i = 0; i < foods.length; i++) {
         let curFood = foods[i];
         curFood.addEventListener('click', function () {
           curFood.classList.toggle('swipe');
-          // console.log(curFood.classList)
+          console.log('food clicked');
 
         });
         let eatBtn = document.getElementsByClassName('eat-item')[i];
@@ -54,9 +65,6 @@
           console.log('trashed');
           curFood.remove();
         })
-
-        let cardLeft = document.getElementsByClassName('left-content')[i];
-        let cardRight = document.getElementsByClassName('right-content')[i];
 
 
       }
