@@ -39,6 +39,12 @@ export class ShelflifeDataService {
       .catch(this.handleError);
   }
 
+  public deleteFood(id: String){
+    const url: string=`${this.apiBaseUrl}/pantry/${id}`;
+    return this.http
+      .delete(url);
+  }
+
   public getPantryFoods():Promise<Food[]>{
     const url: string=`${this.apiBaseUrl}/pantry`;
     return this.http

@@ -25,10 +25,10 @@
         <div class="food-items" id="pantry-list">
             <div class="item-card" *ngFor="let food of foods">
                 <div class="left-content">
-                    <img src="../../assets/images/pantry/fruits.png" alt="">
+                    <img src="../../assets/images/pantry/{{food.category}}.png" alt="">
                     <div class="food-info">
                         <h2>{{food.name}}</h2>
-                        <p>{{food.id}}</p>
+                        <p>{{food.expiryDuration}} left</p>
                     </div>
                 </div>
                 <div class="right-content">
@@ -42,7 +42,7 @@
 
             </div>
 
-            <div class="item-card">
+            <!-- <div class="item-card">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/fish.png" alt="">
                     <div class="food-info">
@@ -185,7 +185,7 @@
                     <h3 class="eat-item">Eat</h3>
                     <h3 class="trash-item">Trash</h3>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
