@@ -21,6 +21,7 @@ import { SearchComponent } from './search/search.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 import { QuickAddComponent } from './quick-add/quick-add.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { QuickAddComponent } from './quick-add/quick-add.component';
     NewItemComponent,
     AddNewItemComponent,
     QuickAddComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
