@@ -6,6 +6,18 @@
 }
 
 
+#no-items{
+    width: 150px;
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#no-items.visible{
+    display: block;
+}
 main{
     display: flex;
     justify-content: center;
@@ -15,6 +27,7 @@ main{
 
 .food-items{
     width: 85vw;
+    background: #fcfffc;
     /* border: none; */
 }
 
