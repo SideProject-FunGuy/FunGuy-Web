@@ -1,11 +1,10 @@
 <div class="pantry">
 
-    <header>
-        <img src="../../assets/images/logo.png" alt="">
-        <h1>My Pantry</h1>
-    </header>
-
-    <main>
+    <div class="top">
+        <header>
+            <img src="../../assets/images/logo.png" alt="">
+            <h1>My Pantry</h1>
+        </header>
         <div class="searchbar">
             <input type="text" placeholder="Search your pantry or fridge">
             <img src="../../assets/images/pantry/search.png" alt="">
@@ -19,6 +18,9 @@
                 <li data-filter="expired">Expired</li>
             </ul>
         </div>
+    </div>
+    <main>
+
 
         <div class="food-items">
             <div class="item-card" *ngFor="let food of foods">

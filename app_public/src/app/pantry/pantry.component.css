@@ -18,6 +18,8 @@ main{
     /* border: none; */
 }
 
+
+
 .food-items .item-card{
     position: relative;
     background-color: #fff;
@@ -147,4 +149,16 @@ button img{
 
 .trash-item{
     background-color: #F24C27;
+}
+
+.searchbar{
+    margin-left: 7.5vw;
+}
+
+.top{
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    background: #fcfffc;
+    padding-bottom: 5px;
 }
