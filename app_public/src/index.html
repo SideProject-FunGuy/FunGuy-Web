@@ -38,40 +38,66 @@
 
       const pantryList = document.getElementById('pantry-list');
       const noItemsImg = document.getElementById('no-items');
-      if (pantryList.innerHTML === "") {
-        noItemsImg.classList.add('visible');
-      } else {
-        if (noItemsImg.classList.contains('visible')) {
-          noItemsImg.classList.remove('visible');
+
+      if (pantryList) {
+        if (pantryList.innerHTML === "") {
+          noItemsImg.classList.add('visible');
+        } else {
+          if (noItemsImg.classList.contains('visible')) {
+            noItemsImg.classList.remove('visible');
+          }
+
         }
-
       }
+
       const foods = document.getElementsByClassName('item-card');
-      for (var i = 0; i < foods.length; i++) {
-        let curFood = foods[i];
-        curFood.addEventListener('click', function () {
-          curFood.classList.toggle('swipe');
-          console.log('food clicked');
 
-        });
-        let eatBtn = document.getElementsByClassName('eat-item')[i];
-        eatBtn.addEventListener('click', function () {
-          console.log('eaten');
-          curFood.remove();
-        })
+      if (foods) {
+        for (let i = 0; i < foods.length; i++) {
+          let curFood = foods[i];
+          curFood.addEventListener('click', function () {
+            curFood.classList.toggle('swipe');
+            console.log('food clicked');
 
-        let trashBtn = document.getElementsByClassName('trash-item')[i];
-        trashBtn.addEventListener('click', function () {
-          console.log('trashed');
-          curFood.remove();
-        })
+          });
+          let eatBtn = document.getElementsByClassName('eat-item')[i];
+          eatBtn.addEventListener('click', function () {
+            console.log('eaten');
+            curFood.remove();
+          })
 
+          let trashBtn = document.getElementsByClassName('trash-item')[i];
+          trashBtn.addEventListener('click', function () {
+            console.log('trashed');
+            curFood.remove();
+          })
 
+        }
       }
+
+      const search = document.getElementById('food-search');
+
+      search.onkeypress = function () {
+        if (search.value.length < 3) {
+          document.getElementById('search-suggestions').style.display = 'block';
+          document.getElementById('add-new').style.display = 'none';
+        } else {
+          document.getElementById('search-suggestions').style.display = 'none';
+          document.getElementById('add-new').style.display = 'block';
+        }
+      }
+
+
 
 
 
     }
+
+
+
+
+
+
 
 
   </script>

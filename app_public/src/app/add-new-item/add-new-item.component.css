@@ -21,7 +21,7 @@ button:focus {
     outline: none!important;
 }
 
-input:focus, input.form-control:focus, select:focus,  select.form-control:focus{
+input.form-control:focus, select:focus,  select.form-control:focus{
 
     outline:none !important;
     outline-width: 0 !important;
@@ -29,6 +29,8 @@ input:focus, input.form-control:focus, select:focus,  select.form-control:focus{
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
 }
+
+
 .food-info {
     margin-top: 32px;
 }
@@ -152,4 +154,17 @@ main{
 
 .btn{
     color: #fff;
+}
+
+.searchbar{
+    width: 77.5vw;
+    align-self: flex-end;
+    margin-right: 7.5vw;
+    position: relative;
+}
+
+#back-arrow{
+    position: absolute;
+    left: -7.5vw;
+    width: 10px;
 }

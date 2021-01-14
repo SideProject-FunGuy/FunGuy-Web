@@ -16,3 +16,20 @@ main{
 .btn{
     width: 85vw;
 }
+
+.result{
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.result img{
+    width: 14px;
+    height: 14px;
+}
+
+.result p{
+    margin-bottom: 0;
+    margin-left: 6px;
+    color: #aaa;
+}

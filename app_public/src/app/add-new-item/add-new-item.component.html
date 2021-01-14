@@ -6,6 +6,7 @@
   </header>
   <main>
     <div class="searchbar">
+      <a [routerLink]="['/search']"><img id="back-arrow" src="../../assets/images/add-item/back-arrow.png" alt=""></a>
       <input type="text" placeholder="Search your pantry or fridge">
       <img src="../../assets/images/pantry/search.png" alt="">
     </div>
@@ -16,21 +17,25 @@
               <img src="../../assets/images/add-item/utensils.png" alt="utensils">
           </div> -->
         <div class="form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="newFood.name">
+          <input class="form-control add-item-form" id="name" name="name" placeholder="Name" [(ngModel)]="newFood.name">
+          <img src="../../assets/images/add-item/utensils.png" alt="">
         </div>
         <div class="form-group">
-          <input class="form-control" id="expiryDuration" name="expiryDuration" placeholder="Expiry Duration"
-            [(ngModel)]="newFood.expiryDuration">
+          <input class="form-control add-item-form" id="expiryDuration" name="expiryDuration"
+            placeholder="Expiry Duration" [(ngModel)]="newFood.expiryDuration">
+          <img src="../../assets/images/add-item/expiry.png" alt="">
         </div>
         <!-- <div class="form-group">
           <input class="form-control" type="date" id="expiryDate" name="expiryDate" placeholder="Expiry Date"
             [(ngModel)]="newFood.expiryDate" required />
         </div> -->
         <div class="form-group">
-          <select class="form-control" name="category" placeholder="Category" [(ngModel)]="newFood.category">
+          <select class="form-control add-item-form" name="category" placeholder="Category"
+            [(ngModel)]="newFood.category">
             <option value="" disabled selected>Choose Category</option>
             <option *ngFor="let category of categoryList">{{category}}</option>
           </select>
+          <img src="../../assets/images/add-item/arrow.png" alt="">
         </div>
 
         <!-- <div class="food-expiry">
@@ -58,3 +63,7 @@
     <a href="statistics"><img src="../../assets/images/stats-inactive.png" alt="statistics"></a>
   </nav>
 </div>
+
+<script type='text/javascript'>
+  console.log('hi');
+</script>

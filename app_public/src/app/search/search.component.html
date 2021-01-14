@@ -6,26 +6,50 @@
 
     <main>
         <div class="searchbar">
-            <input type="text" placeholder="Search your pantry or fridge">
+            <input type="text" placeholder="Search your pantry or fridge" id='food-search'>
             <img src="../../assets/images/pantry/search.png" alt="">
         </div>
 
-        <div class="food-items">
-          <div class="item-card" *ngFor="let food of foods">
-              <div class="left-content">
-                  <img src="../../assets/images/pantry/fruits.png" alt="">
-                  <div class="food-info">
-                      <h2>{{food.name}}</h2>
-                      <p>{{food.id}}</p>
-                  </div>
-              </div>
-              <div class="right-content">
-                  <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
-                  <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
-              </div>
-          </div>
+        <div id="search-suggestions"
+            style="display: none; align-self: flex-start; margin-left: 7.5vw; margin-top: 30px;">
+            <div class="result">
+                <img src="../../assets/images/pantry/search.png" alt="">
+                <p>Bread</p>
+            </div>
+            <div class="result">
+                <img src="../../assets/images/pantry/search.png" alt="">
+                <p>Beans</p>
+            </div>
+            <div class="result">
+                <img src="../../assets/images/pantry/search.png" alt="">
+                <p>Barley</p>
+            </div>
+
+
         </div>
-          <div class="btn"><a [routerLink]="['/add-new']">add new item</a></div>
+        <div class="food-items">
+            <div class="item-card" *ngFor="let food of foods">
+                <div class="left-content">
+                    <img src="../../assets/images/pantry/fruits.png" alt="">
+                    <div class="food-info">
+                        <h2>{{food.name}}</h2>
+                        <p>{{food.id}}</p>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="../../assets/images/pantry/alert.png" class="expiry-alert" alt="">
+                    <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="add-new" style="display: none">
+            <p style="margin-bottom: 0; margin-top: 10px; text-align: center; color: #aaa; font-size: 14px;">Hmm... We
+                couldn't find that
+                in our pantry</p>
+            <div class=" btn"><a [routerLink]="['/add-new']">add new item</a></div>
+
+        </div>
+
     </main>
     <nav class="menu">
         <a href="pantry"><img src="../../assets/images/list-active.png" alt="pantry"></a>
