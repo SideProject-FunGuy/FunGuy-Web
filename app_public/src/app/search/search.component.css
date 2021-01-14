@@ -12,3 +12,7 @@ main{
     padding-bottom: calc(max(9vh, 70px));
 }
 
+
+.btn{
+    width: 85vw;
+}

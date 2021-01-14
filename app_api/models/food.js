@@ -10,7 +10,6 @@ const foodSchema = new mongoose.Schema({
     default: Date.now
   },
   "expiryDuration": String,
-  "expiryDate": Date,
   "category": String,
   "status": {
     type: String,

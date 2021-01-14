@@ -26,7 +26,6 @@ export class AddNewItemComponent implements OnInit {
   public newFood: NewFood = {
     name: '',
     expiryDuration: '',
-    expiryDate: '',
     category: ''
   };
 
@@ -49,7 +48,6 @@ export class AddNewItemComponent implements OnInit {
   private resetForm(): void{
     this.newFood.name= '';
     this.newFood.expiryDuration= '';
-    this.newFood.expiryDate= '';
     this.newFood.category='';
   }
 

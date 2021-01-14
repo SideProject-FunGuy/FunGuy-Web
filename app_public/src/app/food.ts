@@ -1,13 +1,11 @@
 export class NewFood {
   name: string;
   expiryDuration: string;
-  expiryDate: string;
   category: string;
 
   constructor(){
     this.name='';
     this.expiryDuration='';
-    this.expiryDate='';
     this.category='';
   }
 };
@@ -17,7 +15,6 @@ export class Food {
   name: string;
   created: Date;
   expiryDuration: string;
-  expiryDate: Date;
   status: string;
   category: string;
 
@@ -26,7 +23,6 @@ export class Food {
     this.name='';
     this.created= new Date();
     this.expiryDuration='';
-    this.expiryDate=new Date();
     this.status='';
     this.category='';
   }

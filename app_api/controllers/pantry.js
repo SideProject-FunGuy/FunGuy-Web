@@ -47,7 +47,6 @@ const addPantryItem = (req, res)=>{
   Food.create({
     name: req.body.name,
     expiryDuration: req.body.expiryDuration,
-    expiryDate: req.body.expiryDate,
     category: req.body.category
   },
   (err, food)=>{
