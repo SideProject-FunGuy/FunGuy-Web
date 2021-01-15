@@ -39,3 +39,13 @@ export class ApiFood {
     this.url='';
   }
 };
+
+export class MockFood {
+  id: string;
+  name: string;
+
+  constructor(){
+    this.id='';
+    this.name='';
+  }
+};

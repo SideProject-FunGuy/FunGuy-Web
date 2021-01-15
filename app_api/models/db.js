@@ -63,3 +63,4 @@ connect();
 
 require('./user');
 require('./food');
+require('./mockdata');

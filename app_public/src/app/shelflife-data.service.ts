@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiFood } from './food';
 import { Food } from './food';
 import { NewFood } from './food';
+import { MockFood } from './food';
 
 
 @Injectable({
@@ -26,6 +27,15 @@ export class ShelflifeDataService {
       .get(url)
       .toPromise()
       .then(response => response as ApiFood[])
+      .catch(this.handleError);
+  }
+
+  public getMockFoods(search: String):Promise<MockFood[]>{
+    const url: string=`${this.apiBaseUrl}/search/${search}`;
+    return this.http
+      .get(url)
+      .toPromise()
+      .then(response => response as MockFood[])
       .catch(this.handleError);
   }
 

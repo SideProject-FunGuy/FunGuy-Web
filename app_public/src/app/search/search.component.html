@@ -5,29 +5,28 @@
     </header>
 
     <main>
-        <div class="searchbar">
-            <input type="text" placeholder="Search your pantry or fridge" id='food-search'>
+      <div class="searchbar">
+          <input (keydown.enter)="onKeyDown($event)" type="text" placeholder="Search your pantry or fridge" id='food-search'>
+          <img src="../../assets/images/pantry/search.png" alt="">
+      </div>
+
+      <div id="search-suggestions"
+        style="display: none; align-self: flex-start; margin-left: 7.5vw; margin-top: 30px;">
+        <div class="result">
             <img src="../../assets/images/pantry/search.png" alt="">
+            <p>Bread</p>
         </div>
-
-        <div id="search-suggestions"
-            style="display: none; align-self: flex-start; margin-left: 7.5vw; margin-top: 30px;">
-            <div class="result">
-                <img src="../../assets/images/pantry/search.png" alt="">
-                <p>Bread</p>
-            </div>
-            <div class="result">
-                <img src="../../assets/images/pantry/search.png" alt="">
-                <p>Beans</p>
-            </div>
-            <div class="result">
-                <img src="../../assets/images/pantry/search.png" alt="">
-                <p>Barley</p>
-            </div>
-
-
+        <div class="result">
+            <img src="../../assets/images/pantry/search.png" alt="">
+            <p>Beans</p>
         </div>
-        <div class="food-items">
+        <div class="result">
+            <img src="../../assets/images/pantry/search.png" alt="">
+            <p>Barley</p>
+        </div>
+      </div>
+
+        <!-- <div class="food-items">
             <div class="item-card" *ngFor="let food of foods">
                 <div class="left-content">
                     <img src="../../assets/images/pantry/fruits.png" alt="">
@@ -41,8 +40,8 @@
                     <img src="../../assets/images/pantry/arrow.png" class="slide-arrow" alt="">
                 </div>
             </div>
-        </div>
-        <div id="add-new" style="display: none">
+        </div> -->
+        <div *ngIf=isShown class="add-new" id="divshow">
             <p style="margin-bottom: 0; margin-top: 10px; text-align: center; color: #aaa; font-size: 14px;">Hmm... We
                 couldn't find that
                 in our pantry</p>

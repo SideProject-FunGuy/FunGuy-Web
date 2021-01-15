@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShelflifeDataService } from '../shelflife-data.service';
-import { ApiFood } from '../food';
+import { Food } from '../food';
 
 @Component({
   selector: 'app-search',
@@ -9,25 +9,25 @@ import { ApiFood } from '../food';
 })
 export class SearchComponent implements OnInit {
 
-  values = '';
+  public isShown: Boolean = false;
 
   constructor(private shelflifeDataService: ShelflifeDataService) { }
 
-  public foods: ApiFood[]=[];
+  public foods: Food[]=[];
 
   ngOnInit(){
-    this.getFoods();
+
   }
 
-  onKey(event: any){
-    this.values+=event.target.value + ' | ';
+  onKeyDown(event: any){
+    this.isShown = ! this.isShown;
+
   }
 
-  private getFoods(): void{
-    this.shelflifeDataService
-      .getFoods()
-        .then(foundFoods => this.foods=foundFoods);
+  toggleShow(){
+
   }
+
 
   private handleError(error: any): Promise<any> {
     console.error('Something went wrong', error);
