@@ -14,6 +14,20 @@ const foodSchema = new mongoose.Schema({
   "status": {
     type: String,
     default: "Fresh"
+  },
+  "status": {
+    type: String,
+    default: function(){
+      let splitString = this.expiryDuration.split(" ");
+      let days = parseInt(splitString[0]);
+      if (days==0){
+        return "Expired"
+      } else if(days<4){
+        return "Use Soon"
+      } else {
+        return "Fresh"
+      }
+    }
   }
 });
 

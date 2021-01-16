@@ -61,9 +61,9 @@ header h1{
     display: flex;
     list-style: none;
     padding-left: 0;
-    
-    
-    
+
+
+
 }
 .categories li{
     font-size: .9rem;
@@ -139,9 +139,12 @@ border-radius: 8px;
     color: #fff;
 }
 
+a:hover{
+    color: initial;
+}
+
 .btn:hover{
     background-color: #8CC79B;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
