@@ -139,9 +139,7 @@ border-radius: 8px;
     color: #fff;
 }
 
-a:hover{
-    color: initial;
-}
+
 
 .btn:hover{
     background-color: #8CC79B;

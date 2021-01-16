@@ -11,11 +11,11 @@
         </div>
         <div class="categories-container">
             <ul class="categories">
-                <li class="active" data-filter="all">All</li>
-                <li data-filter="fresh">Fresh
+                <li (click)="filterAll()" class="active" data-filter="all">All</li>
+                <li (click)="filterFresh()" data-filter="fresh">Fresh
                 </li>
-                <li data-filter="use-soon">Use Soon</li>
-                <li data-filter="expired">Expired</li>
+                <li (click)="filterUseSoon()" data-filter="use-soon">Use Soon</li>
+                <li (click)="filterExpired()" data-filter="expired">Expired</li>
             </ul>
         </div>
     </div>

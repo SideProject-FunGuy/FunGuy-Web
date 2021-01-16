@@ -11,6 +11,7 @@ import { Food } from '../food';
 export class PantryComponent implements OnInit {
   public foods: Food[]=[];
 
+
   constructor(
     private shelflifeDataService: ShelflifeDataService,
     private router: Router
@@ -32,9 +33,35 @@ export class PantryComponent implements OnInit {
         .then(foundFoods => this.foods = foundFoods);
   }
 
+  public filterFresh(){
+    this.foods = this.foods.filter(function(el:Food){
+      return el.status=="Fresh"
+    })
+  }
+
+  public filterUseSoon(){
+    this.foods = this.foods.filter(function(el:Food){
+      return el.status=="Use Soon"
+    })
+  }
+
+  public filterExpired(){
+    this.foods = this.foods.filter(function(el:Food){
+      return el.status=="Expired"
+    })
+  }
+
+  public filterAll(){
+    this.getPantryFoods();
+  }
+
+
+
   private handleError(error: any): Promise<any> {
     console.error('Something went wrong', error);
     return Promise.reject(error.message || error);
   }
+
+
 
 }
